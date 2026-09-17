@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrhorkosWebSites | Bienvenida</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Aquí defino mis variables de colores y transiciones generales para la página de inicio */
+        :root {
+            --bg-dark: #0f0f0f;
+            --bg-card: #1a1a1a;
+            --primary: #7b2ffd;
+            --primary-hover: #9353ff;
+            --text-main: #f8f9fa;
+            --text-muted: #a0a5b1;
+            --border-color: #2a2c3d;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Reseteo los márgenes y estructuro el tipo de fuente principal */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Doy estilo al cuerpo con el fondo oscuro */
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        /* Contenedor principal de bienvenida centrado */
+        .welcome-container {
+            text-align: center;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        /* Título principal con el nombre de la marca */
+        .welcome-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .welcome-title span {
+            color: var(--primary);
+            text-shadow: 0 0 20px rgba(123, 47, 253, 0.6);
+        }
+
+        /* Subtítulo descriptivo */
+        .welcome-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        /* Botón destacado para solicitar el sitio web */
+        .btn-solicitar {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            color: white;
+            padding: 18px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(123, 47, 253, 0.4);
+        }
+
+        .btn-solicitar:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(123, 47, 253, 0.7);
+        }
+
+        /* Contenedor de redes sociales */
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Estilo de cada ícono de redes sociales */
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            color: var(--text-main);
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(123, 47, 253, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Aquí monto mi contenedor principal de bienvenida -->
+    <div class="welcome-container">
+        <h1 class="welcome-title">Krhorkos<span>WebSites</span></h1>
+        <p class="welcome-subtitle">Tu presencia en internet, construida a tu medida</p>
+        
+        <a href="sitios.html" class="btn-solicitar">🛒 Solicitar mi sitio web</a>
+
+        <!-- Aquí coloco mis redes sociales con sus íconos correspondientes -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/krhorkos3dstudioand2d/" target="_blank" class="social-icon" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://x.com/krhorkos3DAnd2D" target="_blank" class="social-icon" title="X (Twitter)">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com/@Krhorkos3DStudioAnd2D-b6g" target="_blank" class="social-icon" title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://alex293517.itch.io/" target="_blank" class="social-icon" title="Itch.io">
+                <i class="fa-brands fa-itch-io"></i>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

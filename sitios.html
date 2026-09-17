@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrhorkosWebSites | Catálogo y Avisos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Aquí configuro las variables de diseño para la página de servicios y avisos */
+        :root {
+            --bg-dark: #0f0f0f;
+            --bg-card: #1a1a1a;
+            --primary: #7b2ffd;
+            --primary-hover: #9353ff;
+            --accent: #00f5d4;
+            --text-main: #f8f9fa;
+            --text-muted: #a0a5b1;
+            --border-color: #2a2c3d;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Reseteo general de márgenes y tipografía */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* Estilo para la barra superior con el enlace de regreso */
+        .top-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 25px 20px;
+        }
+
+        .btn-regresar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-regresar:hover {
+            border-color: var(--primary);
+            background: #252530;
+        }
+
+        /* Contenedor general de secciones */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* Rejilla de tarjetas del catálogo */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Estilo de cada tarjeta del catálogo */
+        .catalog-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .catalog-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(123, 47, 253, 0.3);
+        }
+
+        .catalog-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .price-breakdown {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+
+        .total-price {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--accent);
+            margin-top: 5px;
+        }
+
+        /* Sección de Avisos y Condiciones */
+        .avisos-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+
+        .avisos-container h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: var(--text-main);
+        }
+
+        .avisos-list {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .avisos-list li {
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .avisos-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .avisos-list ul {
+            list-style-type: disc;
+            margin-top: 8px;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        /* Sección de Contacto */
+        .contact-section {
+            text-align: center;
+            background: linear-gradient(135deg, #181528, var(--bg-card));
+            border: 1px solid var(--primary);
+            border-radius: 16px;
+            padding: 50px 20px;
+            margin-bottom: 40px;
+        }
+
+        .contact-email {
+            font-size: 1.4rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin: 15px 0 25px 0;
+        }
+
+        .btn-gmail {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            color: white;
+            padding: 16px 35px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(123, 47, 253, 0.4);
+        }
+
+        .btn-gmail:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(123, 47, 253, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Aquí coloco la barra superior con el enlace de regreso a index.html -->
+    <div class="top-nav">
+        <a href="index.html" class="btn-regresar"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+    </div>
+
+    <!-- Sección principal del Catálogo -->
+    <section>
+        <h2 class="section-title">Catálogo de Servicios</h2>
+        <p class="section-subtitle">Elige la opción que mejor se adapte a las necesidades de tu negocio</p>
+
+        <div class="catalog-grid">
+            
+            <!-- Opción 1: Página Básica -->
+            <div class="catalog-card">
+                <div>
+                    <h3>Página Básica</h3>
+                    <p style="color: var(--text-muted);">Ideal para emprendedores que buscan presencia inicial rápida y profesional en la web.</p>
+                </div>
+                <div class="price-breakdown">
+                    <div>Precio del sitio: $1,000 MXN</div>
+                    <div>+ Primer mantenimiento: $500 MXN</div>
+                    <div class="total-price">TOTAL: $1,500 MXN</div>
+                </div>
+            </div>
+
+            <!-- Opción 2: Página Estándar -->
+            <div class="catalog-card">
+                <div>
+                    <h3>Página Estándar</h3>
+                    <p style="color: var(--text-muted);">Perfecta para negocios en crecimiento que requieren mayor estructura y secciones.</p>
+                </div>
+                <div class="price-breakdown">
+                    <div>Precio del sitio: $1,500 MXN</div>
+                    <div>+ Primer mantenimiento: $500 MXN</div>
+                    <div class="total-price">TOTAL: $2,000 MXN</div>
+                </div>
+            </div>
+
+            <!-- Opción 3: Página Completa -->
+            <div class="catalog-card">
+                <div>
+                    <h3>Página Completa</h3>
+                    <p style="color: var(--text-muted);">Solución robusta y avanzada con diseño totalmente personalizado y a la medida.</p>
+                </div>
+                <div class="price-breakdown">
+                    <div>Precio del sitio: $5,500 MXN</div>
+                    <div>+ Primer mantenimiento: $500 MXN</div>
+                    <div class="total-price">TOTAL: $6,000 MXN</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Sección de Avisos y Condiciones -->
+        <div class="avisos-container">
+            <h2>📌 Avisos y condiciones</h2>
+            <ul class="avisos-list">
+                <li>No me hago responsable del uso que se le dé al sitio web una vez entregado.</li>
+                <li>Para ser tomado en cuenta, el correo debe enviarse desde la dirección del negocio. Ejemplo: negocio@gmail.com — NO desde cuentas personales ni ajenas. Si no se cumple, no se procesará.</li>
+                <li>
+                    Al enviar la solicitud, incluir:
+                    <ul>
+                        <li>Nombre(s) del cliente o del negocio</li>
+                        <li>Captura de pantalla donde se vea la opción elegida del catálogo</li>
+                        <li>Captura de pantalla del comprobante de pago</li>
+                    </ul>
+                </li>
+                <li>Si solo se paga el precio del sitio pero faltan los $500 del primer mantenimiento, el sitio NO se habilitará ni se pondrá en línea hasta completar el pago de los $500.</li>
+                <li>Si desean imágenes personalizadas (logo, fotos, referencias), deben enviarlas por correo.</li>
+                <li>Si desean una sección de ubicación, deben incluir la dirección completa en su solicitud.</li>
+            </ul>
+        </div>
+
+        <!-- Sección de Contacto -->
+        <div class="contact-section">
+            <h2 style="font-size: 2rem; font-weight: 800;">¿Listo para solicitar tu sitio?</h2>
+            <div class="contact-email">krhorkoswebsite@gmail.com</div>
+            <a href="mailto:krhorkoswebsite@gmail.com" class="btn-gmail"><i class="fa-solid fa-envelope"></i> Enviar correo de solicitud</a>
+        </div>
+    </section>
+
+</body>
+</html>

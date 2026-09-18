@@ -140,14 +140,22 @@
             margin-bottom: 20px;
         }
 
-        /* # ESTILO PARA LAS 5 IMÁGENES O CAPTURAS DEL SITIO */
+        /* # ESTILO PARA LAS 5 IMÁGENES O CAPTURAS DEL SITIO CON CURSOR DE ZOOM */
         .project-img {
-            width: 150%;
-            height: 150px;
+            width: 100%;
+            height: 130px;
             object-fit: cover;
             border-radius: 8px;
             border: 1px solid var(--border-color);
             background: #22222a;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .project-img:hover {
+            border-color: var(--accent);
+            transform: scale(1.03);
+            box-shadow: 0 4px 15px rgba(0, 245, 212, 0.25);
         }
 
         .project-link-container {
@@ -166,6 +174,50 @@
         .project-link:hover {
             text-decoration: underline;
         }
+
+        /* # DISEÑO EL CONTENEDOR MODAL (VISOR FLOTANTE PARA AMPLIAR LA IMAGEN) */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 10px;
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 30px rgba(0, 245, 212, 0.4);
+            animation: zoomIn 0.3s ease;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: var(--text-main);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -183,7 +235,7 @@
             <p>Sitios Web — todos creados por mí</p>
         </div>
 
-        <!-- # SECCIÓN 1: EJEMPLOS DE SITIOS WEB BÁSICOS -->
+        <!-- # SECCIÓN 1: EJEMPLOS DE SITIOS WEB BÁSICOS --
         <div class="category-section">
             <h2 class="category-title"><i class="fa-solid fa-laptop-code"></i> Ejemplos de sitios web básicos</h2>
 
@@ -194,11 +246,11 @@
             <div class="project-card">
                 <div class="project-title">Nombre del Proyecto Básico 1</div>
                 <div class="project-images-grid">
-                    <img src="ruta/imagen1.jpg" alt="Captura 1" class="project-img">
-                    <img src="ruta/imagen2.jpg" alt="Captura 2" class="project-img">
-                    <img src="ruta/imagen3.jpg" alt="Captura 3" class="project-img">
-                    <img src="ruta/imagen4.jpg" alt="Captura 4" class="project-img">
-                    <img src="ruta/imagen5.jpg" alt="Captura 5" class="project-img">
+                    <img src="ruta/imagen1.jpg" alt="Captura 1" class="project-img" onclick="openModal(this)">
+                    <img src="ruta/imagen2.jpg" alt="Captura 2" class="project-img" onclick="openModal(this)">
+                    <img src="ruta/imagen3.jpg" alt="Captura 3" class="project-img" onclick="openModal(this)">
+                    <img src="ruta/imagen4.jpg" alt="Captura 4" class="project-img" onclick="openModal(this)">
+                    <img src="ruta/imagen5.jpg" alt="Captura 5" class="project-img" onclick="openModal(this)">
                 </div>
                 <div class="project-link-container">
                     <span>URL del sitio:</span>
@@ -217,13 +269,13 @@
 
             <!-- 
             # AQUÍ INICIO EL BLOQUE DE UN PROYECTO ESTÁNDAR: 
-            # AQUI selecciono, copio y pego este bloque completo abajo cada vez que quiera registrar un nuevo sitio web estándar.
+            # Yo selecciono, copio y pego este bloque completo abajo cada vez que quiera registrar un nuevo sitio web estándar.
             -->
             <div class="project-card">
-                <div class="project-title">Sitio web de Boxer y Calcetines </div>
+                <div class="project-title">Sitio web de Boxer y Calcetines</div>
                 <div class="project-images-grid">
-                    <img src="SITIO_CALCETINES_Y_BOXER/SITIO_CALCETINES_Y_BOXER_1.png" alt="Captura 1" class="project-img">
-                    <img src="SITIO_CALCETINES_Y_BOXER/SITIO_CALCETINES_Y_BOXER_2.png" alt="Captura 2" class="project-img">
+                    <img src="SITIO_CALCETINES_Y_BOXER/SITIO_CALCETINES_Y_BOXER_1.png" alt="Captura 1" class="project-img" onclick="openModal(this)">
+                    <img src="SITIO_CALCETINES_Y_BOXER/SITIO_CALCETINES_Y_BOXER_2.png" alt="Captura 2" class="project-img" onclick="openModal(this)">
                 </div>
                 <div class="project-link-container">
                     <span>URL del sitio:</span>
@@ -236,6 +288,27 @@
 
         </div>
     </section>
+
+    <!-- # AQUÍ CREO LA VENTANA FLOTANTE (MODAL) PARA AMPLIAR LAS IMÁGENES AL HACERLE CLIC -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- # AQUÍ AGREGO EL SCRIPT DE JAVASCRIPT PARA CONTROLAR LA APERTURA Y CIERRE DEL VISOR DE IMÁGENES -->
+    <script>
+        function openModal(element) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            modal.style.display = "flex";
+            modalImg.src = element.src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+    </script>
 
 </body>
 </html>

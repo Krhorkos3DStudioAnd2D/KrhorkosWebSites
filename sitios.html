@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KrhorkosWebSites | Catálogo y Avisos</title>
+    <title>KrhorkosWebSites | Portafolio y Catálogo</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Aquí configuro las variables de diseño para la página de servicios y avisos */
+        /* Aquí configuro mis variables de diseño para la página de servicios y portafolio */
         :root {
             --bg-dark: #0f0f0f;
             --bg-card: #1a1a1a;
@@ -21,7 +21,7 @@
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        /* Reseteo general de márgenes y tipografía */
+        /* Reseteo mis márgenes y tipografía general */
         * {
             margin: 0;
             padding: 0;
@@ -36,14 +36,17 @@
             overflow-x: hidden;
         }
 
-        /* Estilo para la barra superior con el enlace de regreso */
+        /* Aquí diseño mi barra superior con los botones de navegación */
         .top-nav {
             max-width: 1200px;
             margin: 0 auto;
             padding: 25px 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
-        .btn-regresar {
+        .btn-regresar, .btn-paginas {
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -57,12 +60,12 @@
             transition: var(--transition);
         }
 
-        .btn-regresar:hover {
+        .btn-regresar:hover, .btn-paginas:hover {
             border-color: var(--primary);
             background: #252530;
         }
 
-        /* Contenedor general de secciones */
+        /* Aquí armo mi contenedor general de secciones */
         section {
             max-width: 1200px;
             margin: 0 auto;
@@ -84,15 +87,18 @@
             font-size: 1.1rem;
         }
 
-        /* Rejilla de tarjetas del catálogo */
+        /* Aquí estructuro mi rejilla para las tarjetas del catálogo */
         .catalog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-bottom: 60px;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Estilo de cada tarjeta del catálogo */
+        /* Aquí le doy estilo a cada tarjeta del catálogo */
         .catalog-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -136,7 +142,7 @@
             margin-top: 5px;
         }
 
-        /* Botón de solicitar dentro de cada tarjeta */
+        /* Aquí defino el botón de solicitud dentro de cada tarjeta */
         .btn-card-solicitar {
             display: inline-block;
             width: 100%;
@@ -158,7 +164,7 @@
             box-shadow: 0 4px 15px rgba(123, 47, 253, 0.4);
         }
 
-        /* Sección de Avisos y Condiciones */
+        /* Aquí programo mi sección de avisos, condiciones y costos de modificación */
         .avisos-container {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -207,7 +213,7 @@
             gap: 6px;
         }
 
-        /* Sección de Contacto */
+        /* Aquí configuro mi sección de contacto final */
         .contact-section {
             text-align: center;
             background: linear-gradient(135deg, #181528, var(--bg-card));
@@ -249,96 +255,83 @@
 </head>
 <body>
 
-    <!-- Aquí coloco la barra superior con el enlace de regreso a index.html -->
+    <!-- Aquí coloco mi barra superior con el enlace directo a index.html y al portafolio paginas.html -->
     <div class="top-nav">
         <a href="index.html" class="btn-regresar"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+        <a href="paginas.html" class="btn-paginas"><i class="fa-solid fa-file-code"></i> Ver Portafolio de Páginas</a>
     </div>
 
-    <!-- Sección principal del Catálogo -->
+    <!-- Aquí despliego la sección principal de mi catálogo -->
     <section>
         <h2 class="section-title">Catálogo de Servicios</h2>
         <p class="section-subtitle">Elige la opción que mejor se adapte a las necesidades de tu negocio</p>
 
         <div class="catalog-grid">
             
-            <!-- Opción 1: Página Básica -->
+            <!-- Aquí muestro la Opción 1: Página Web Básica -->
             <div class="catalog-card">
                 <div>
-                    <h3>Página Básica</h3>
+                    <h3>Página Web Básica</h3>
                     <p style="color: var(--text-muted);">Ideal para emprendedores que buscan presencia inicial rápida y profesional en la web.</p>
                 </div>
                 <div class="price-breakdown">
-                    <div>Precio del sitio: $1,000 MXN</div>
-                    <div>+ Primer mantenimiento: $500 MXN</div>
-                    <div class="total-price">TOTAL: $1,500 MXN</div>
+                    <div class="total-price">PRECIO: $2,000 MXN</div>
                 </div>
-                <!-- Botón actualizado con el enlace de Gmail directo hacia krhorkosstore@gmail.com -->
+                <!-- Aquí enlazo mi botón de solicitud con Gmail hacia krhorkosstore@gmail.com -->
                 <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
                     <button class="btn-card-solicitar">✉️ Solicitar Básica</button>
                 </a>
             </div>
 
-            <!-- Opción 2: Página Estándar -->
+            <!-- Aquí muestro la Opción 2: Página Web Estándar -->
             <div class="catalog-card">
                 <div>
-                    <h3>Página Estándar</h3>
+                    <h3>Página Web Estándar</h3>
                     <p style="color: var(--text-muted);">Perfecta para negocios en crecimiento que requieren mayor estructura y secciones.</p>
                 </div>
                 <div class="price-breakdown">
-                    <div>Precio del sitio: $1,500 MXN</div>
-                    <div>+ Primer mantenimiento: $500 MXN</div>
-                    <div class="total-price">TOTAL: $2,000 MXN</div>
+                    <div class="total-price">PRECIO: $4,500 MXN</div>
                 </div>
-                <!-- Botón actualizado con el enlace de Gmail directo hacia krhorkosstore@gmail.com -->
+                <!-- Aquí enlazo mi botón de solicitud con Gmail hacia krhorkosstore@gmail.com -->
                 <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
                     <button class="btn-card-solicitar">✉️ Solicitar Estándar</button>
                 </a>
             </div>
 
-            <!-- Opción 3: Página Completa -->
-            <div class="catalog-card">
-                <div>
-                    <h3>Página Completa</h3>
-                    <p style="color: var(--text-muted);">Solución robusta y avanzada con diseño totalmente personalizado y a la medida.</p>
-                </div>
-                <div class="price-breakdown">
-                    <div>Precio del sitio: $5,500 MXN</div>
-                    <div>+ Primer mantenimiento: $500 MXN</div>
-                    <div class="total-price">TOTAL: $6,000 MXN</div>
-                </div>
-                <!-- Botón actualizado con el enlace de Gmail directo hacia krhorkosstore@gmail.com -->
-                <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
-                    <button class="btn-card-solicitar">✉️ Solicitar Completa</button>
-                </a>
-            </div>
-
         </div>
 
-        <!-- Sección de Avisos y Condiciones -->
+        <!-- Aquí redacto todos mis avisos, condiciones y costos de modificación -->
         <div class="avisos-container">
             <h2>📌 Avisos y condiciones</h2>
             <ul class="avisos-list">
-                <li>No me hago responsable del uso que se le dé al sitio web una vez entregado.</li>
-                <li>Para ser tomado en cuenta, el correo debe enviarse desde la dirección del negocio. Ejemplo: negocio@gmail.com — NO desde cuentas personales ni ajenas. Si no se cumple, no se procesará.</li>
+                <li>Para ser tomado en cuenta, el correo debe enviarse desde la dirección del negocio. Ejemplo: negocio@gmail.com — NO desde cuentas personales ni ajenas. Si no se cumple, no se te tomara en cuenta. </li>
                 <li>
                     Al enviar la solicitud, incluir:
                     <ul>
-                        <li>Nombre(s) del cliente o del negocio</li>
+                        <li>Nombre(s) del negocio</li>
                         <li>Captura de pantalla donde se vea la opción elegida del catálogo</li>
                         <li>Captura de pantalla del comprobante de pago</li>
                     </ul>
                 </li>
-                <li>Si solo se paga el precio del sitio pero faltan los $500 del primer mantenimiento, el sitio NO se habilitará ni se pondrá en línea hasta completar el pago de los $500.</li>
                 <li>Si desean imágenes personalizadas (logo, fotos, referencias), deben enviarlas por correo.</li>
                 <li>Si desean una sección de ubicación, deben incluir la dirección completa en su solicitud.</li>
+                <li>
+                    Si el Cliente Quiere cambios en su sitio debera de acudir a mi, Pero tendria un pequeño costo adicional:
+                    <ul>
+                        <li>Cambios sencillos como modificar textos, agregar o quitar imágenes: <strong>$5 MXN por cada imagen modificada</strong> (ejemplo: cambiar 3 imágenes = $15 MXN en total)</li>
+                        <li>Desarrollo o modificación de interfaces: es el trabajo más complejo y tiene un costo de <strong>"pago grande"</strong> de $100 MXN</li>
+                        <li>Agregar funcionalidad de botón para cambiar temas del sitio: $150 MXN</li>
+                        <li>Por el momento no disponemos de Whatsapp Asi que todas las solicitudes seran por medio de Gmail</li>
+                    </ul>
+                </li>
             </ul>
         </div>
 
-        <!-- Sección de Contacto -->
+        <!-- Aquí establezco mi sección final de contacto -->
         <div class="contact-section">
             <h2 style="font-size: 2rem; font-weight: 800;">¿Listo para solicitar tu sitio?</h2>
             <div class="contact-email">krhorkosstore@gmail.com</div>
-            <!-- Botón de contacto general actualizado con el enlace de Gmail directo -->
+            <!-- Aquí coloco mi botón general para abrir Gmail directamente -->
             <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
                 <button class="btn-gmail"><i class="fa-solid fa-envelope"></i> Enviar correo de solicitud</button>
             </a>

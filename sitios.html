@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* # AQUÍ CONFIGURO LAS VARIABLES DE DISEÑO PARA MANTENER LA MISMA ESTÉTICA OSCURA Y MODERNA */
+        /* # VARIABLES DE DISEÑO (ESTÉTICA OSCURA Y MODERNA) */
         :root {
             --bg-dark: #0f0f0f;
             --bg-card: #1a1a1a;
@@ -21,7 +21,6 @@
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        /* # RESETEO GENERAL DE MÁRGENES Y TIPOGRAFÍA PARA TODO EL DOCUMENTO */
         * {
             margin: 0;
             padding: 0;
@@ -36,7 +35,7 @@
             overflow-x: hidden;
         }
 
-        /* # CREO LA BARRA DE NAVEGACIÓN SUPERIOR CON LOS BOTONES DE ACCESO RÁPIDO */
+        /* # BARRA SUPERIOR DE NAVEGACIÓN */
         .top-nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -65,17 +64,17 @@
             background: #252530;
         }
 
-        /* # DEFINO EL CONTENEDOR PRINCIPAL DONDE ALOJARÉ TODO EL CONTENIDO */
+        /* # CONTENEDOR PRINCIPAL */
         section {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px 20px 60px 20px;
         }
 
-        /* # DISEÑO EL ENCABEZADO PRINCIPAL DE LA PÁGINA */
+        /* # ENCABEZADO PRINCIPAL */
         .header-portafolio {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .header-portafolio h1 {
@@ -92,7 +91,77 @@
             font-weight: 600;
         }
 
-        /* # ESTILIZO LAS SECCIONES DE CATEGORÍAS */
+        /* # SECCIÓN DE INFORMACIÓN IMPORTANTE Y CONDICIONES (NUEVA) */
+        .info-policy-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .info-policy-section h2 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .policy-card {
+            background: #141414;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .policy-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .policy-card h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .policy-card p, .policy-card ul {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .policy-card ul {
+            padding-left: 18px;
+            margin-top: 5px;
+        }
+
+        .policy-banner-note {
+            background: rgba(123, 47, 253, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        /* # SECCIONES DE CATEGORÍAS Y PROYECTOS */
         .category-section {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -111,7 +180,6 @@
             gap: 10px;
         }
 
-        /* # CONSTRUYO LA ESTRUCTURA VISUAL PARA CADA PROYECTO Y SUS IMÁGENES */
         .project-card {
             background: #141414;
             border: 1px solid var(--border-color);
@@ -140,7 +208,6 @@
             margin-bottom: 20px;
         }
 
-        /* # ESTILO PARA LAS 5 IMÁGENES DEL SITIO CON CURSOR DE ZOOM */
         .project-img {
             width: 100%;
             height: 130px;
@@ -175,7 +242,7 @@
             text-decoration: underline;
         }
 
-        /* # ESTILOS PARA LA SECCIÓN DE PLANTILLAS EN VENTA */
+        /* # PLANTILLAS EN VENTA */
         .templates-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -257,7 +324,7 @@
             transform: translateY(-2px);
         }
 
-        /* # DISEÑO EL CONTENEDOR MODAL (VISOR FLOTANTE PARA AMPLIAR LAS IMÁGENES) */
+        /* # VISOR MODAL DE IMÁGENES */
         .image-modal {
             display: none;
             position: fixed;
@@ -314,32 +381,72 @@
     <section>
         <div class="header-portafolio">
             <h1>Portafolio de Trabajos</h1>
-            <p>Sitios Web — todos creados por mí</p>
+            <p>Sitios Web — todos creados por Krhorkos3DStudioAnd2D </p>
         </div>
 
-        <!-- # SECCIÓN 1: EJEMPLOS DE SITIOS WEB BÁSICOS --
-        <div class="category-section">
-            <h2 class="category-title"><i class="fa-solid fa-laptop-code"></i> Ejemplos de sitios web básicos</h2>
+        <!-- # SECCIÓN DE INFORMACIÓN Y CONDICIONES IMPORTANTES -->
+        <div class="info-policy-section">
+            <h2><i class="fa-solid fa-circle-info"></i> Información Importante y Guía de Compra</h2>
+            
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3><i class="fa-solid fa-globe"></i> 1. Sobre el Dominio</h3>
+                    <p>Sugiero usar mi dominio por dos razones clave:</p>
+                    <ul>
+                        <li>Evitas gastos extra cada año 💸</li>
+                        <li>No te preocupas por pagos de renovación ⏰</li>
+                    </ul>
+                    <p style="margin-top: 8px;">Se usa mi dominio gratis. Solo cambiamos la info por la tuya. El dominio sigue siendo mío, pero el contenido es <strong>100% tuyo</strong> ✨</p>
+                </div>
 
-            <div class="project-card">
-                <div class="project-title">Nombre del Proyecto Básico 1</div>
-                <div class="project-images-grid">
-                    <img src="ruta/imagen1.jpg" alt="Captura 1" class="project-img" onclick="openModal(this)">
-                    <img src="ruta/imagen2.jpg" alt="Captura 2" class="project-img" onclick="openModal(this)">
-                    <img src="ruta/imagen3.jpg" alt="Captura 3" class="project-img" onclick="openModal(this)">
-                    <img src="ruta/imagen4.jpg" alt="Captura 4" class="project-img" onclick="openModal(this)">
-                    <img src="ruta/imagen5.jpg" alt="Captura 5" class="project-img" onclick="openModal(this)">
+                <div class="policy-card">
+                    <h3><i class="fa-solid fa-envelope-open-text"></i> 2. Qué Incluir al Solicitar</h3>
+                    <p>Cuando envíes tu correo de solicitud, incluye:</p>
+                    <ul>
+                        <li>Captura de pantalla de la tarjeta elegida del catálogo 📸</li>
+                        <li>Datos de tu negocio (nombre, dirección, horarios, teléfono) 📋</li>
+                        <li>Coordenadas exactas para tu mapa (usamos nuestras coordenadas seguras del Pacífico Sur por defecto o las tuyas reales) 📍</li>
+                        <li>Comprobante de pago</li>
+                    </ul>
                 </div>
-                <div class="project-link-container">
-                    <span>URL del sitio:</span>
-                    <a href="https://enlace-del-sitio.com" target="_blank" class="project-link">https://enlace-del-sitio.com</a>
+
+                <div class="policy-card">
+                    <h3><i class="fa-solid fa-tags"></i> 3. Costos Opcionales</h3>
+                    <p>Modificaciones posteriores a la entrega:</p>
+                    <ul>
+                        <li>Cambios de texto o imágenes: <strong>$5 MXN</strong> por cada imagen o parrafo (ej. 3 imágenes = $15 MXN).</li>
+                        <li>¡Si el total supera los $100 MXN, te lo dejo a la mitad de precio! 🤝</li>
+                    </ul>
                 </div>
+
+                <div class="policy-card">
+                    <h3><i class="fa-solid fa-screwdriver-wrench"></i> 4. Mejoras Adicionales</h3>
+                    <p>¿Quieres llevar tu sitio al siguiente nivel?</p>
+                    <ul>
+                        <li>Modificar la interfaz completa: <strong>$150 MXN</strong> 🎨</li>
+                        <li>Agregar botón para cambiar temas del sitio: <strong>$200 MXN</strong> 🌓</li>
+                    </ul>
+                </div>
+
+                <div class="policy-card">
+                    <h3><i class="fa-solid fa-paper-plane"></i> 5. Cómo Pedir Cambios</h3>
+                    <p>Cualquier modificación me escribes al correo, me dices qué cambiar y lo hago por ti. Las imágenes me las mandas por correo para integrarlas directo a tu sitio ✉️</p>
+                </div>
+
+                <div class="policy-card">
+                    <h3><i class="fa-solid fa-triangle-exclamation"></i> 6. Demostración y Tiempos</h3>
+                    <p>Los sitios mostrados son de ejemplo; la info real se coloca tras la compra 📝. <strong>Nota de paciencia:</strong> Puedo tardarme un poco en hacer cambios dependiendo de cuántos clientes estén pidiendo modificaciones en el momento, ¡agradezco mucho tu comprensión! 🙏</p>
+                </div>
+            </div>
+
+            <div class="policy-banner-note">
+                💡 <strong>Promoción y agradecimiento:</strong> Al usar mi dominio no pagas nada extra por mantenimiento de enlace. Además, la dirección de tu sitio aparecerá en mi página como agradecimiento y promoción sin costo adicional.
             </div>
         </div>
 
         <!-- # SECCIÓN 2: EJEMPLOS DE SITIOS WEB ESTÁNDAR -->
         <div class="category-section">
-            <h2 class="category-title"><i class="fa-solid fa-server"></i> Ejemplos de sitios web estándar</h2>
+            <h2 class="category-title"><i class="fa-solid fa-server"></i> Mis Propios sitios </h2>
 
             <div class="project-card">
                 <div class="project-title">Sitio web de Boxer y Calcetines</div>
@@ -363,39 +470,28 @@
             <p style="color: var(--text-muted); margin-bottom: 25px;">Sitios listos para personalizar y adaptarse a tu proyecto.</p>
 
             <div class="templates-grid">
-                <!-- 
-                  # AQUÍ INICIA EL BLOQUE DEL PRIMER SITIO EN VENTA
-                  # copio y pego este bloque completo si quiero agregar más plantillas en el futuro.
-                -->
                 <div class="template-card">
                     <div>
-                        <!-- Aquí agrego la imagen de vista previa del sitio -->
                         <img src="SITIO_DEMO_PELUQUERIA/SITIO_DEMO_PELUQUERIA_1.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
                         <img src="SITIO_DEMO_PELUQUERIA/SITIO_DEMO_PELUQUERIA_2.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
                         
-                        <div class="project-title">Sitio de Completo para una peluqueria </div>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">Sitio moderno ideal para una peluqueria</p>
+                        <div class="project-title">Sitio Completo para una Peluquería</div>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Sitio moderno ideal para una peluquería o barbería (con mapa integrado en el Pacífico Sur libre de broncas)</p>
                     </div>
 
                     <div>
-                        <!-- Aquí coloco el precio -->
                         <div class="template-price">PRECIO: $2,500 MXN</div>
 
-                        <!-- Aquí va el enlace directo a la demostración -->
                         <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
-                            <a href="https://krhorkos3dstudioand2d.github.io/KrhorkosDemo_1/" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/KrhorkosDemo_1//</a>
+                            <a href="https://krhorkos3dstudioand2d.github.io/KrhorkosDemo_1/" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/KrhorkosDemo_1/</a>
                         </div>
 
-                        <!-- Botón de compra o solicitud -->
                         <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
-                            <button class="btn-comprar-template"><i class="fa-solid fa-cart-shopping"></i> Comprar Sitio Web. </button>
+                            <button class="btn-comprar-template"><i class="fa-solid fa-cart-shopping"></i> Comprar Sitio Web</button>
                         </a>
                     </div>
                 </div>
-                <!-- 
-                  # AQUÍ TERMINA EL BLOQUE DEL PRIMER SITIO EN VENTA
-                -->
             </div>
         </div>
     </section>

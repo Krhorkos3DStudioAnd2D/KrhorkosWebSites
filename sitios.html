@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* # VARIABLES DE DISEÑO (ESTÉTICA OSCURA Y MODERNA) */
         :root {
             --bg-dark: #0f0f0f;
             --bg-card: #1a1a1a;
@@ -35,7 +34,6 @@
             overflow-x: hidden;
         }
 
-        /* # BARRA SUPERIOR DE NAVEGACIÓN */
         .top-nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -64,14 +62,12 @@
             background: #252530;
         }
 
-        /* # CONTENEDOR PRINCIPAL */
         section {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px 20px 60px 20px;
         }
 
-        /* # ENCABEZADO PRINCIPAL */
         .header-portafolio {
             text-align: center;
             margin-bottom: 40px;
@@ -91,7 +87,6 @@
             font-weight: 600;
         }
 
-        /* # SECCIÓN DE INFORMACIÓN IMPORTANTE Y CONDICIONES (NUEVA) */
         .info-policy-section {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -161,7 +156,6 @@
             margin-top: 20px;
         }
 
-        /* # SECCIONES DE CATEGORÍAS Y PROYECTOS */
         .category-section {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -230,6 +224,7 @@
             align-items: center;
             gap: 10px;
             font-weight: 600;
+            flex-wrap: wrap;
         }
 
         .project-link {
@@ -242,7 +237,6 @@
             text-decoration: underline;
         }
 
-        /* # PLANTILLAS EN VENTA */
         .templates-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -324,7 +318,36 @@
             transform: translateY(-2px);
         }
 
-        /* # VISOR MODAL DE IMÁGENES */
+        .urls-list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .url-row-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #141414;
+            border: 1px solid var(--border-color);
+            padding: 14px 20px;
+            border-radius: 10px;
+            transition: var(--transition);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .url-row-item:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .url-item-name {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
         .image-modal {
             display: none;
             position: fixed;
@@ -371,20 +394,17 @@
 </head>
 <body>
 
-    <!-- # BARRA SUPERIOR DE NAVEGACIÓN -->
     <div class="top-nav">
         <a href="index.html" class="btn-regresar"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
         <a href="sitios.html" class="btn-catalogo"><i class="fa-solid fa-store"></i> Ver Catálogo y Precios</a>
     </div>
 
-    <!-- # CONTENIDO PRINCIPAL -->
     <section>
         <div class="header-portafolio">
             <h1>Portafolio de Trabajos</h1>
-            <p>Sitios Web — todos creados por Krhorkos3DStudioAnd2D </p>
+            <p>Sitios Web — todos creados por mí</p>
         </div>
 
-        <!-- # SECCIÓN DE INFORMACIÓN Y CONDICIONES IMPORTANTES -->
         <div class="info-policy-section">
             <h2><i class="fa-solid fa-circle-info"></i> Información Importante y Guía de Compra</h2>
             
@@ -406,7 +426,6 @@
                         <li>Captura de pantalla de la tarjeta elegida del catálogo 📸</li>
                         <li>Datos de tu negocio (nombre, dirección, horarios, teléfono) 📋</li>
                         <li>Coordenadas exactas para tu mapa (usamos nuestras coordenadas seguras del Pacífico Sur por defecto o las tuyas reales) 📍</li>
-                        <li>Comprobante de pago</li>
                     </ul>
                 </div>
 
@@ -414,7 +433,7 @@
                     <h3><i class="fa-solid fa-tags"></i> 3. Costos Opcionales</h3>
                     <p>Modificaciones posteriores a la entrega:</p>
                     <ul>
-                        <li>Cambios de texto o imágenes: <strong>$5 MXN</strong> por cada imagen o parrafo (ej. 3 imágenes = $15 MXN).</li>
+                        <li>Cambios de texto o imágenes: <strong>$5 MXN</strong> por cada imagen (ej. 3 imágenes = $15 MXN).</li>
                         <li>¡Si el total supera los $100 MXN, te lo dejo a la mitad de precio! 🤝</li>
                     </ul>
                 </div>
@@ -444,9 +463,8 @@
             </div>
         </div>
 
-        <!-- # SECCIÓN 2: EJEMPLOS DE SITIOS WEB ESTÁNDAR -->
         <div class="category-section">
-            <h2 class="category-title"><i class="fa-solid fa-server"></i> Mis Propios sitios </h2>
+            <h2 class="category-title"><i class="fa-solid fa-server"></i> Ejemplos de sitios web estándar</h2>
 
             <div class="project-card">
                 <div class="project-title">Sitio web de Boxer y Calcetines</div>
@@ -464,7 +482,6 @@
             </div>
         </div>
 
-        <!-- # SECCIÓN 3: PLANTILLAS DISPONIBLES PARA LA VENTA -->
         <div class="category-section">
             <h2 class="category-title"><i class="fa-solid fa-store"></i> Sitios Web Disponibles para la Venta</h2>
             <p style="color: var(--text-muted); margin-bottom: 25px;">Sitios listos para personalizar y adaptarse a tu proyecto.</p>
@@ -494,15 +511,56 @@
                 </div>
             </div>
         </div>
+
+        <!-- ======================================================== -->
+        <!-- BLOQUE 1: PÁGINAS VENDIDAS (CLIENTES)                      -->
+        <!-- ======================================================== -->
+        <div class="category-section">
+            <h2 class="category-title"><i class="fa-solid fa-handshake"></i> Páginas Vendidas (Clientes)</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Listado de sitios web entregados a clientes.</p>
+            
+            <div class="urls-list-container">
+                <!-- 
+                
+               =============================================================== COPIO Y PEGO ESTE BLOQUE COMPLETO PARA AGREGAR MÁS CLIENTES ===============================================================
+                
+                -->
+                <div class="url-row-item">
+                    <span class="url-item-name"><i class="fa-solid fa-store" style="color: var(--primary); margin-right: 8px;"></i> Nombre del Negocio o Cliente</span>
+                    <a href="https://enlace-del-cliente.com" target="_blank" class="project-link">https://enlace-del-cliente.com</a>
+                </div>
+                <!-- FIN DEL BLOQUE A COPIAR -->
+                
+            </div>
+        </div>
+
+        <!-- ======================================================== -->
+        <!-- BLOQUE 2: MIS SITIOS WEB (PROPIOS / NO A LA VENTA)         -->
+        <!-- ======================================================== -->
+        <div class="category-section">
+            <h2 class="category-title"><i class="fa-solid fa-laptop-code"></i> Mis Sitios Web (De mi Propiedad)</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Proyectos personales y herramientas propias.</p>
+            
+            <div class="urls-list-container">
+                <!-- 
+                
+                =============================================================== COPIO Y PEGO ESTE BLOQUE COMPLETO PARA AGREGAR MÁS SITIOS PROPIOS ============================================================================
+                -->
+                <div class="url-row-item">
+                    <span class="url-item-name"><i class="fa-solid fa-code" style="color: var(--accent); margin-right: 8px;"></i> Nombre de mi Sitio Personal</span>
+                    <a href="https://mi-sitio-personal.com" target="_blank" class="project-link">https://mi-sitio-personal.com</a>
+                </div>
+                <!-- FIN DEL BLOQUE A COPIAR -->
+            </div>
+        </div>
+
     </section>
 
-    <!-- # VENTANA FLOTANTE (MODAL) PARA AMPLIAR LAS IMÁGENES -->
     <div id="imageModal" class="image-modal" onclick="closeModal()">
         <span class="close-modal">&times;</span>
         <img class="modal-content" id="modalImage">
     </div>
 
-    <!-- # SCRIPT DE JAVASCRIPT PARA CONTROLAR EL VISOR -->
     <script>
         function openModal(element) {
             const modal = document.getElementById("imageModal");

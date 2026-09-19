@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Aquí configuro mis variables de diseño para la página de servicios y portafolio */
+        /* # AQUÍ CONFIGURO LAS VARIABLES DE DISEÑO PARA MANTENER LA MISMA ESTÉTICA OSCURA Y MODERNA */
         :root {
             --bg-dark: #0f0f0f;
             --bg-card: #1a1a1a;
@@ -21,7 +21,7 @@
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        /* Reseteo mis márgenes y tipografía general */
+        /* # RESETEO GENERAL DE MÁRGENES Y TIPOGRAFÍA PARA TODO EL DOCUMENTO */
         * {
             margin: 0;
             padding: 0;
@@ -36,7 +36,7 @@
             overflow-x: hidden;
         }
 
-        /* Aquí diseño mi barra superior con los botones de navegación */
+        /* # CREO LA BARRA DE NAVEGACIÓN SUPERIOR CON LOS BOTONES DE ACCESO RÁPIDO */
         .top-nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -46,7 +46,7 @@
             flex-wrap: wrap;
         }
 
-        .btn-regresar, .btn-paginas {
+        .btn-regresar, .btn-catalogo {
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -60,95 +60,189 @@
             transition: var(--transition);
         }
 
-        .btn-regresar:hover, .btn-paginas:hover {
+        .btn-regresar:hover, .btn-catalogo:hover {
             border-color: var(--primary);
             background: #252530;
         }
 
-        /* Aquí armo mi contenedor general de secciones */
+        /* # DEFINO EL CONTENEDOR PRINCIPAL DONDE ALOJARÉ TODO EL CONTENIDO */
         section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px 20px 60px 20px;
         }
 
-        .section-title {
+        /* # DISEÑO EL ENCABEZADO PRINCIPAL DE LA PÁGINA */
+        .header-portafolio {
             text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header-portafolio h1 {
             font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 10px;
             text-transform: uppercase;
+            margin-bottom: 15px;
+            color: var(--text-main);
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            font-size: 1.1rem;
+        .header-portafolio p {
+            color: var(--accent);
+            font-size: 1.25rem;
+            font-weight: 600;
         }
 
-        /* Aquí estructuro mi rejilla para las tarjetas del catálogo */
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-            max-width: 850px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Aquí le doy estilo a cada tarjeta del catálogo */
-        .catalog-card {
+        /* # ESTILIZO LAS SECCIONES DE CATEGORÍAS */
+        .category-section {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 35px;
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* # CONSTRUYO LA ESTRUCTURA VISUAL PARA CADA PROYECTO Y SUS IMÁGENES */
+        .project-card {
+            background: #141414;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 20px rgba(123, 47, 253, 0.2);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .project-images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* # ESTILO PARA LAS 5 IMÁGENES DEL SITIO CON CURSOR DE ZOOM */
+        .project-img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: #22222a;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .project-img:hover {
+            border-color: var(--accent);
+            transform: scale(1.03);
+            box-shadow: 0 4px 15px rgba(0, 245, 212, 0.25);
+        }
+
+        .project-link-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .project-link {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* # ESTILOS PARA LA SECCIÓN DE PLANTILLAS EN VENTA */
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .template-card {
+            background: #141414;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: var(--transition);
         }
 
-        .catalog-card:hover {
+        .template-card:hover {
             transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 25px rgba(123, 47, 253, 0.3);
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(0, 245, 212, 0.2);
         }
 
-        .catalog-card h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
+        .template-preview-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
             margin-bottom: 15px;
-            color: var(--primary);
+            background: #22222a;
+            cursor: pointer;
+            transition: var(--transition);
         }
 
-        .price-breakdown {
-            margin: 20px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 15px 0;
+        .template-preview-img:hover {
+            border-color: var(--primary);
+            transform: scale(1.02);
         }
 
-        .total-price {
-            font-size: 1.5rem;
+        .template-price {
+            font-size: 1.3rem;
             font-weight: 900;
             color: var(--accent);
-            margin-top: 5px;
+            margin: 15px 0;
         }
 
-        /* Aquí defino el botón de solicitud dentro de cada tarjeta */
-        .btn-card-solicitar {
+        .template-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .template-link:hover {
+            text-decoration: underline;
+        }
+
+        .btn-comprar-template {
             display: inline-block;
             width: 100%;
-            background: var(--bg-dark);
-            color: var(--text-main);
-            border: 1px solid var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            color: white;
+            border: none;
             padding: 12px;
             border-radius: 8px;
             text-align: center;
@@ -158,185 +252,173 @@
             cursor: pointer;
         }
 
-        .btn-card-solicitar:hover {
-            background: var(--primary);
-            color: white;
+        .btn-comprar-template:hover {
             box-shadow: 0 4px 15px rgba(123, 47, 253, 0.4);
+            transform: translateY(-2px);
         }
 
-        /* Aquí programo mi sección de avisos, condiciones y costos de modificación */
-        .avisos-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 40px;
-            margin-bottom: 60px;
-        }
-
-        .avisos-container h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 25px;
-            color: var(--text-main);
-        }
-
-        .avisos-list {
-            list-style-type: none;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .avisos-list li {
-            position: relative;
-            padding-left: 25px;
-            color: var(--text-muted);
-            line-height: 1.6;
-            font-size: 1.05rem;
-        }
-
-        .avisos-list li::before {
-            content: "•";
-            position: absolute;
+        /* # DISEÑO EL CONTENEDOR MODAL (VISOR FLOTANTE PARA AMPLIAR LAS IMÁGENES) */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
             left: 0;
-            color: var(--primary);
-            font-size: 1.5rem;
-            line-height: 1;
-        }
-
-        .avisos-list ul {
-            list-style-type: disc;
-            margin-top: 8px;
-            margin-left: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        /* Aquí configuro mi sección de contacto final */
-        .contact-section {
-            text-align: center;
-            background: linear-gradient(135deg, #181528, var(--bg-card));
-            border: 1px solid var(--primary);
-            border-radius: 16px;
-            padding: 50px 20px;
-            margin-bottom: 40px;
-        }
-
-        .contact-email {
-            font-size: 1.4rem;
-            color: var(--accent);
-            font-weight: 700;
-            margin: 15px 0 25px 0;
-        }
-
-        .btn-gmail {
-            display: inline-flex;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
             align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
-            color: white;
-            padding: 16px 35px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 700;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(123, 47, 253, 0.4);
-            border: none;
-            cursor: pointer;
+            padding: 20px;
         }
 
-        .btn-gmail:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(123, 47, 253, 0.7);
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 10px;
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 30px rgba(0, 245, 212, 0.4);
+            animation: zoomIn 0.3s ease;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: var(--text-main);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Aquí coloco mi barra superior con el enlace directo a index.html y al portafolio paginas.html -->
+    <!-- # BARRA SUPERIOR DE NAVEGACIÓN -->
     <div class="top-nav">
         <a href="index.html" class="btn-regresar"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
-        <a href="paginas.html" class="btn-paginas"><i class="fa-solid fa-file-code"></i> Ver Portafolio de Páginas</a>
+        <a href="sitios.html" class="btn-catalogo"><i class="fa-solid fa-store"></i> Ver Catálogo y Precios</a>
     </div>
 
-    <!-- Aquí despliego la sección principal de mi catálogo -->
+    <!-- # CONTENIDO PRINCIPAL -->
     <section>
-        <h2 class="section-title">Catálogo de Servicios</h2>
-        <p class="section-subtitle">Elige la opción que mejor se adapte a las necesidades de tu negocio</p>
-
-        <div class="catalog-grid">
-            
-            <!-- Aquí muestro la Opción 1: Página Web Básica -->
-            <div class="catalog-card">
-                <div>
-                    <h3>Página Web Básica</h3>
-                    <p style="color: var(--text-muted);">Ideal para emprendedores que buscan presencia inicial rápida y profesional en la web.</p>
-                </div>
-                <div class="price-breakdown">
-                    <div class="total-price">PRECIO: $2,000 MXN</div>
-                </div>
-                <!-- Aquí enlazo mi botón de solicitud con Gmail hacia krhorkosstore@gmail.com -->
-                <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
-                    <button class="btn-card-solicitar">✉️ Solicitar Básica</button>
-                </a>
-            </div>
-
-            <!-- Aquí muestro la Opción 2: Página Web Estándar -->
-            <div class="catalog-card">
-                <div>
-                    <h3>Página Web Estándar</h3>
-                    <p style="color: var(--text-muted);">Perfecta para negocios en crecimiento que requieren mayor estructura y secciones.</p>
-                </div>
-                <div class="price-breakdown">
-                    <div class="total-price">PRECIO: $4,500 MXN</div>
-                </div>
-                <!-- Aquí enlazo mi botón de solicitud con Gmail hacia krhorkosstore@gmail.com -->
-                <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
-                    <button class="btn-card-solicitar">✉️ Solicitar Estándar</button>
-                </a>
-            </div>
-
+        <div class="header-portafolio">
+            <h1>Portafolio de Trabajos</h1>
+            <p>Sitios Web — todos creados por mí</p>
         </div>
 
-        <!-- Aquí redacto todos mis avisos, condiciones y costos de modificación -->
-        <div class="avisos-container">
-            <h2>📌 Avisos y condiciones</h2>
-            <ul class="avisos-list">
-                <li> Envía tu pedido desde cualquier correo que uses, no necesitas uno especial. Solo indícame tu nombre y el de tu negocio para poder identificarte facilmente. </li>
-                <li>
-                    Al enviar la solicitud, incluir:
-                    <ul>
-                        <li>Nombre(s) del negocio</li>
-                        <li>Captura de pantalla donde se vea la opción elegida del catálogo</li>
-                        <li>Captura de pantalla del comprobante de pago</li>
-                    </ul>
-                </li>
-                <li>Si desean imágenes personalizadas (logo, fotos, referencias), deben enviarlas por correo.</li>
-                <li>Si desean una sección de ubicación, deben incluir la dirección completa en su solicitud.</li>
-                <li>
-                    Si necesitas modificaciones después de la entrega, puedo ayudarte con costos adicionales muy accesibles
-                    <ul>
-                        <li>Cambios sencillos como modificar textos, agregar o quitar imágenes: <strong>$5 MXN por cada imagen modificada</strong> (ejemplo: cambiar 3 imágenes = $15 MXN en total)</li>
-                        <li>Desarrollo o modificación de interfaces: es el trabajo más complejo y tiene un costo de <strong>"pago grande"</strong> de $100 MXN</li>
-                        <li>Agregar funcionalidad de botón para cambiar temas del sitio: $150 MXN</li>
-                        <li>Por el momento no disponemos de Whatsapp Asi que todas las solicitudes seran por medio de Gmail</li>
-                    </ul>
-                </li>
-            </ul>
+        <!-- # SECCIÓN 1: EJEMPLOS DE SITIOS WEB BÁSICOS -->
+        <div class="category-section">
+            <h2 class="category-title"><i class="fa-solid fa-laptop-code"></i> Ejemplos de sitios web básicos</h2>
+
+            <div class="project-card">
+                <div class="project-title">Nombre del Proyecto Básico 1</div>
+                <div class="project-images-grid">
+                    <img src="ruta/imagen1.jpg" alt="Captura 1" class="project-img" onclick="openModal(this)">
+                    <img src="ruta/imagen2.jpg" alt="Captura 2" class="project-img" onclick="openModal(this)">
+                    <img src="ruta/imagen3.jpg" alt="Captura 3" class="project-img" onclick="openModal(this)">
+                    <img src="ruta/imagen4.jpg" alt="Captura 4" class="project-img" onclick="openModal(this)">
+                    <img src="ruta/imagen5.jpg" alt="Captura 5" class="project-img" onclick="openModal(this)">
+                </div>
+                <div class="project-link-container">
+                    <span>URL del sitio:</span>
+                    <a href="https://enlace-del-sitio.com" target="_blank" class="project-link">https://enlace-del-sitio.com</a>
+                </div>
+            </div>
         </div>
 
-        <!-- Aquí establezco mi sección final de contacto -->
-        <div class="contact-section">
-            <h2 style="font-size: 2rem; font-weight: 800;">¿Listo para solicitar tu sitio?</h2>
-            <div class="contact-email">krhorkosstore@gmail.com</div>
-            <!-- Aquí coloco mi botón general para abrir Gmail directamente -->
-            <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
-                <button class="btn-gmail"><i class="fa-solid fa-envelope"></i> Enviar correo de solicitud</button>
-            </a>
+        <!-- # SECCIÓN 2: EJEMPLOS DE SITIOS WEB ESTÁNDAR -->
+        <div class="category-section">
+            <h2 class="category-title"><i class="fa-solid fa-server"></i> Ejemplos de sitios web estándar</h2>
+
+            <div class="project-card">
+                <div class="project-title">Sitio web de Boxer y Calcetines</div>
+                <div class="project-images-grid">
+                    <img src="SITIO_CALCETINES_Y_BOXER/SITIO_CALCETINES_Y_BOXER_1.png" alt="Captura 1" class="project-img" onclick="openModal(this)">
+                    <img src="SITIO_CALCETINES_Y_BOXER/SITIO_CALCETINES_Y_BOXER_2.png" alt="Captura 2" class="project-img" onclick="openModal(this)">
+                    <img src="SITIO_CALCETINES_Y_BOXER/SITIO_CALCETINES_Y_BOXER_3.png" alt="Captura 3" class="project-img" onclick="openModal(this)">
+                    <img src="SITIO_CALCETINES_Y_BOXER/SITIO_CALCETINES_Y_BOXER_4.png" alt="Captura 4" class="project-img" onclick="openModal(this)">
+                    <img src="SITIO_CALCETINES_Y_BOXER/SITIO_CALCETINES_Y_BOXER_5.png" alt="Captura 5" class="project-img" onclick="openModal(this)">
+                </div>
+                <div class="project-link-container">
+                    <span>URL del sitio:</span>
+                    <a href="https://krhorkos3dstudioand2d.github.io/KrhorkosStore/index.html" target="_blank" class="project-link">https://krhorkos3dstudioand2d.github.io/KrhorkosStore/index.html</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- # SECCIÓN 3: PLANTILLAS DISPONIBLES PARA LA VENTA -->
+        <div class="category-section">
+            <h2 class="category-title"><i class="fa-solid fa-store"></i> Plantillas Disponibles para la Venta</h2>
+            <p style="color: var(--text-muted); margin-bottom: 25px;">Diseños listos para personalizar y adaptarse a tu proyecto.</p>
+
+            <div class="templates-grid">
+                <!-- 
+                  # AQUÍ INICIA EL BLOQUE DEL PRIMER SITIO EN VENTA
+                  # Yo copio y pego este bloque completo si quiero agregar más plantillas en el futuro.
+                -->
+                <div class="template-card">
+                    <div>
+                        <!-- Aquí agrego la imagen de vista previa del sitio -->
+                        <img src="ruta/de/ejemplo/preview-plantilla1.jpg" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        
+                        <div class="project-title">Nombre de la Plantilla 1</div>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Plantilla moderna ideal para negocios o portafolios personales.</p>
+                    </div>
+
+                    <div>
+                        <!-- Aquí coloco el precio -->
+                        <div class="template-price">PRECIO: $1,500 MXN</div>
+
+                        <!-- Aquí va el enlace directo a la demostración -->
+                        <div style="font-size: 0.9rem; margin-bottom: 15px;">
+                            <span>Demo:</span>
+                            <a href="https://enlace-de-demostracion.com" target="_blank" class="template-link">https://enlace-de-demostracion.com</a>
+                        </div>
+
+                        <!-- Botón de compra o solicitud -->
+                        <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
+                            <button class="btn-comprar-template"><i class="fa-solid fa-cart-shopping"></i> Comprar Plantilla</button>
+                        </a>
+                    </div>
+                </div>
+                <!-- 
+                  # AQUÍ TERMINA EL BLOQUE DEL PRIMER SITIO EN VENTA
+                -->
+            </div>
         </div>
     </section>
+
+    <!-- # VENTANA FLOTANTE (MODAL) PARA AMPLIAR LAS IMÁGENES -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- # SCRIPT DE JAVASCRIPT PARA CONTROLAR EL VISOR -->
+    <script>
+        function openModal(element) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            modal.style.display = "flex";
+            modalImg.src = element.src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+    </script>
 
 </body>
 </html>

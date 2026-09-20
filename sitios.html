@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KrhorkosWebSites | Portafolio y Catálogo</title>
+    
+    <!-- AQUÍ PONGO MI ICONO EN LA PESTAÑA DEL NAVEGADOR (FAVICON): Reemplaza la ruta por la de tu imagen -->
+    <link rel="icon" type="image/png" href="imagenes/icono.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* AQUÍ DEFINO LOS ESTILOS DE LOS 5 TEMAS (COLORES Y VARIABLES) */
         :root, [data-theme="dark"] {
             --bg-dark: #0f0f0f;
             --bg-card: #1a1a1a;
@@ -100,7 +103,7 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .btn-regresar:hover, .btn-catalogo:hover {
@@ -108,7 +111,6 @@
             opacity: 0.9;
         }
 
-        /* ESTILOS PARA EL SELECTOR DE TEMAS EN LA NAVEGACIÓN */
         .theme-selector-container {
             display: flex;
             align-items: center;
@@ -137,7 +139,7 @@
             font-weight: 600;
             cursor: pointer;
             outline: none;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
 
         .theme-select:hover, .theme-select:focus {
@@ -161,6 +163,18 @@
             text-transform: uppercase;
             margin-bottom: 15px;
             color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        /* ESTILO PARA EL ICONO EN EL ENCABEZADO */
+        .header-logo-icon {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            border-radius: 6px;
         }
 
         .header-portafolio p {
@@ -199,7 +213,7 @@
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 20px;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .policy-card:hover {
@@ -262,7 +276,7 @@
             border-radius: 12px;
             padding: 25px;
             margin-bottom: 25px;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .project-card:hover {
@@ -292,7 +306,7 @@
             border: 1px solid var(--border-color);
             background: var(--bg-dark);
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .project-img:hover {
@@ -311,7 +325,7 @@
         .project-link {
             color: var(--accent);
             text-decoration: none;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .project-link:hover {
@@ -333,7 +347,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .template-card:hover {
@@ -351,7 +365,7 @@
             margin-bottom: 15px;
             background: var(--bg-dark);
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .template-preview-img:hover {
@@ -372,7 +386,7 @@
             text-decoration: none;
             font-weight: 600;
             margin-bottom: 15px;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .template-link:hover {
@@ -390,7 +404,7 @@
             text-align: center;
             text-decoration: none;
             font-weight: 700;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             cursor: pointer;
         }
 
@@ -430,7 +444,7 @@
             font-size: 40px;
             font-weight: bold;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .close-modal:hover {
@@ -451,7 +465,9 @@
             <a href="sitios.html" class="btn-catalogo"><i class="fa-solid fa-store"></i> Ver Catálogo y Precios</a>
         </div>
 
-        <!-- AQUÍ DEBO DE COPIAR EL BLOQUE DE CÓDIGO PARA AGREGAR O MODIFICAR EL SELECTOR DE TEMAS -->
+        <!-- ========================================== -->
+        <!-- BLOQUE PARA COPIAR: Selector de Temas      -->
+        <!-- ========================================== -->
         <div class="theme-selector-container">
             <label for="themeSelect"><i class="fa-solid fa-palette"></i> Tema:</label>
             <select id="themeSelect" class="theme-select" onchange="cambiarTema(this.value)">
@@ -466,7 +482,12 @@
 
     <section>
         <div class="header-portafolio">
-            <h1>Portafolio de Trabajos</h1>
+            <h1>
+                <!-- AQUÍ PONGO MI IMAGEN EN EL ENCABEZADO -->
+                <img src="imagenes/icono.png" alt="Icono" class="header-logo-icon">
+                
+                Portafolio de Trabajos
+            </h1>
             <p>Sitios Web — todos creados por mí</p>
         </div>
 
@@ -530,7 +551,7 @@
         </div>
 
         <div class="category-section">
-            <h2 class="category-title"><i class="fa-solid fa-server"></i> Mi sitio web</h2>
+            <h2 class="category-title"><i class="fa-solid fa-server"></i> Ejemplos de sitios web estándar</h2>
 
             <div class="project-card">
                 <div class="project-title">Sitio web de Boxer y Calcetines</div>
@@ -585,14 +606,15 @@
         <img class="modal-content" id="modalImage">
     </div>
 
-    <!-- AQUÍ DEBO DE COPIAR EL BLOQUE DE CÓDIGO PARA AGREGAR O MODIFICAR LA LÓGICA DE LOS TEMAS -->
+    <!-- ========================================== -->
+    <!-- BLOQUE PARA COPIAR: Lógica de Temas        -->
+    <!-- ========================================== -->
     <script>
         function cambiarTema(tema) {
             document.body.setAttribute('data-theme', tema);
             localStorage.setItem('krhorkos_theme', tema);
         }
 
-        // Cargar el tema guardado previamente si existe
         window.addEventListener('DOMContentLoaded', () => {
             const temaGuardado = localStorage.getItem('krhorkos_theme');
             if (temaGuardado) {

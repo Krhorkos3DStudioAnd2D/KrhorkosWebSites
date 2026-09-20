@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root {
+        /* AQUÍ DEFINO LOS ESTILOS DE LOS 5 TEMAS (COLORES Y VARIABLES) */
+        :root, [data-theme="dark"] {
             --bg-dark: #0f0f0f;
             --bg-card: #1a1a1a;
             --primary: #7b2ffd;
@@ -17,7 +18,55 @@
             --text-main: #f8f9fa;
             --text-muted: #a0a5b1;
             --border-color: #2a2c3d;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --card-inner: #141414;
+        }
+
+        [data-theme="light"] {
+            --bg-dark: #f4f6f9;
+            --bg-card: #ffffff;
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --accent: #06b6d4;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --card-inner: #f8fafc;
+        }
+
+        [data-theme="blue"] {
+            --bg-dark: #0a192f;
+            --bg-card: #172a45;
+            --primary: #64ffda;
+            --primary-hover: #3b82f6;
+            --accent: #60a5fa;
+            --text-main: #e2e8f0;
+            --text-muted: #8892b0;
+            --border-color: #233554;
+            --card-inner: #0f223f;
+        }
+
+        [data-theme="neutral"] {
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --primary: #a3a3a3;
+            --primary-hover: #d4d4d4;
+            --accent: #ffffff;
+            --text-main: #e5e5e5;
+            --text-muted: #737373;
+            --border-color: #333333;
+            --card-inner: #181818;
+        }
+
+        [data-theme="emerald"] {
+            --bg-dark: #061a14;
+            --bg-card: #0b2920;
+            --primary: #10b981;
+            --primary-hover: #059669;
+            --accent: #34d399;
+            --text-main: #ecfdf5;
+            --text-muted: #94a3b8;
+            --border-color: #134e38;
+            --card-inner: #08221b;
         }
 
         * {
@@ -32,12 +81,21 @@
             background-color: var(--bg-dark);
             color: var(--text-main);
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .top-nav {
             max-width: 1200px;
             margin: 0 auto;
             padding: 25px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-buttons {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
@@ -59,7 +117,43 @@
 
         .btn-regresar:hover, .btn-catalogo:hover {
             border-color: var(--primary);
-            background: #252530;
+            opacity: 0.9;
+        }
+
+        /* ESTILOS PARA EL SELECTOR DE TEMAS EN LA NAVEGACIÓN */
+        .theme-selector-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 8px 15px;
+            border-radius: 8px;
+        }
+
+        .theme-selector-container label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-select {
+            background: var(--card-inner);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .theme-select:hover, .theme-select:focus {
+            border-color: var(--primary);
         }
 
         section {
@@ -93,7 +187,7 @@
             border-radius: 16px;
             padding: 35px;
             margin-bottom: 40px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
         .info-policy-section h2 {
@@ -113,7 +207,7 @@
         }
 
         .policy-card {
-            background: #141414;
+            background: var(--card-inner);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 20px;
@@ -146,7 +240,7 @@
         }
 
         .policy-banner-note {
-            background: rgba(123, 47, 253, 0.1);
+            background: var(--card-inner);
             border-left: 4px solid var(--primary);
             padding: 15px 20px;
             border-radius: 0 8px 8px 0;
@@ -175,7 +269,7 @@
         }
 
         .project-card {
-            background: #141414;
+            background: var(--card-inner);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 25px;
@@ -185,7 +279,7 @@
 
         .project-card:hover {
             border-color: var(--primary);
-            box-shadow: 0 8px 20px rgba(123, 47, 253, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .project-title {
@@ -208,7 +302,7 @@
             object-fit: cover;
             border-radius: 8px;
             border: 1px solid var(--border-color);
-            background: #22222a;
+            background: var(--bg-dark);
             cursor: pointer;
             transition: var(--transition);
         }
@@ -216,7 +310,6 @@
         .project-img:hover {
             border-color: var(--accent);
             transform: scale(1.03);
-            box-shadow: 0 4px 15px rgba(0, 245, 212, 0.25);
         }
 
         .project-link-container {
@@ -245,7 +338,7 @@
         }
 
         .template-card {
-            background: #141414;
+            background: var(--card-inner);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 25px;
@@ -258,7 +351,7 @@
         .template-card:hover {
             transform: translateY(-8px);
             border-color: var(--accent);
-            box-shadow: 0 10px 25px rgba(0, 245, 212, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         .template-preview-img {
@@ -268,7 +361,7 @@
             border-radius: 8px;
             border: 1px solid var(--border-color);
             margin-bottom: 15px;
-            background: #22222a;
+            background: var(--bg-dark);
             cursor: pointer;
             transition: var(--transition);
         }
@@ -302,7 +395,7 @@
             display: inline-block;
             width: 100%;
             background: linear-gradient(135deg, var(--primary), var(--primary-hover));
-            color: white;
+            color: #ffffff;
             border: none;
             padding: 12px;
             border-radius: 8px;
@@ -314,38 +407,8 @@
         }
 
         .btn-comprar-template:hover {
-            box-shadow: 0 4px 15px rgba(123, 47, 253, 0.4);
+            opacity: 0.9;
             transform: translateY(-2px);
-        }
-
-        .urls-list-container {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .url-row-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #141414;
-            border: 1px solid var(--border-color);
-            padding: 14px 20px;
-            border-radius: 10px;
-            transition: var(--transition);
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .url-row-item:hover {
-            border-color: var(--accent);
-            transform: translateX(4px);
-        }
-
-        .url-item-name {
-            font-weight: 700;
-            color: var(--text-main);
-            font-size: 1.05rem;
         }
 
         .image-modal {
@@ -367,7 +430,7 @@
             max-height: 90vh;
             border-radius: 10px;
             border: 2px solid var(--accent);
-            box-shadow: 0 0 30px rgba(0, 245, 212, 0.4);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
             animation: zoomIn 0.3s ease;
         }
 
@@ -375,7 +438,7 @@
             position: absolute;
             top: 25px;
             right: 35px;
-            color: var(--text-main);
+            color: #ffffff;
             font-size: 40px;
             font-weight: bold;
             cursor: pointer;
@@ -392,11 +455,26 @@
         }
     </style>
 </head>
-<body>
+<body data-theme="dark">
 
     <div class="top-nav">
-        <a href="index.html" class="btn-regresar"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
-        <a href="sitios.html" class="btn-catalogo"><i class="fa-solid fa-store"></i> Ver Catálogo y Precios</a>
+        <div class="nav-buttons">
+            <a href="index.html" class="btn-regresar"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+            <a href="sitios.html" class="btn-catalogo"><i class="fa-solid fa-store"></i> Ver Catálogo y Precios</a>
+        </div>
+
+        <!-- AQUÍ DEBO DE COPIAR EL BLOQUE DE CÓDIGO PARA AGREGAR O MODIFICAR EL SELECTOR DE TEMAS -->
+        <div class="theme-selector-container">
+            <label for="themeSelect"><i class="fa-solid fa-palette"></i> Tema:</label>
+            <select id="themeSelect" class="theme-select" onchange="cambiarTema(this.value)">
+                <option value="dark">Oscuro (Default)</option>
+                <option value="light">Claro</option>
+                <option value="blue">Azul Profesional</option>
+                <option value="neutral">Neutro Minimalista</option>
+                <option value="emerald">Esmeralda</option>
+            </select>
+        </div>
+        <!-- FIN DEL BLOQUE A COPIAR -->
     </div>
 
     <section>
@@ -411,10 +489,11 @@
             <div class="policy-grid">
                 <div class="policy-card">
                     <h3><i class="fa-solid fa-globe"></i> 1. Sobre el Dominio</h3>
-                    <p>Sugiero usar mi dominio por dos razones clave:</p>
+                    <p>Sugiero usar mi dominio por Tres razones clave:</p>
                     <ul>
                         <li>Evitas gastos extra cada año 💸</li>
                         <li>No te preocupas por pagos de renovación ⏰</li>
+                        <li>Me evito dolores de cabeza despues.</li>
                     </ul>
                     <p style="margin-top: 8px;">Se usa mi dominio gratis. Solo cambiamos la info por la tuya. El dominio sigue siendo mío, pero el contenido es <strong>100% tuyo</strong> ✨</p>
                 </div>
@@ -424,8 +503,8 @@
                     <p>Cuando envíes tu correo de solicitud, incluye:</p>
                     <ul>
                         <li>Captura de pantalla de la tarjeta elegida del catálogo 📸</li>
-                        <li>Datos de tu negocio (nombre, dirección, horarios, teléfono) 📋</li>
-                        <li>Coordenadas exactas para tu mapa (usamos nuestras coordenadas seguras del Pacífico Sur por defecto o las tuyas reales) 📍</li>
+                        <li>Datos de tu negocio (nombre, dirección, horarios, teléfono, coordenadas) 📋</li>
+                        <li>Coordenadas exactas de tu local o negocio para ponerlo en el mapa de tu sitio📍</li>
                     </ul>
                 </div>
 
@@ -433,8 +512,8 @@
                     <h3><i class="fa-solid fa-tags"></i> 3. Costos Opcionales</h3>
                     <p>Modificaciones posteriores a la entrega:</p>
                     <ul>
-                        <li>Cambios de texto o imágenes: <strong>$5 MXN</strong> por cada imagen (ej. 3 imágenes = $15 MXN).</li>
-                        <li>¡Si el total supera los $100 MXN, te lo dejo a la mitad de precio! 🤝</li>
+                        <li>Cambios de texto o imágenes: <strong>$5 MXN</strong> por cada imagen y parrafo cambiado (ej. 3 imágenes = $15 MXN).</li>
+                        <li>Boton de cambios de tema: <strong>$150</strong></li>
                     </ul>
                 </div>
 
@@ -454,17 +533,17 @@
 
                 <div class="policy-card">
                     <h3><i class="fa-solid fa-triangle-exclamation"></i> 6. Demostración y Tiempos</h3>
-                    <p>📌 Los sitios se muestran sin información real. Al contratar, personalizo todo con los datos de tu negocio. <strong>Nota de paciencia:</strong> Puedo tardarme un poco en hacer cambios dependiendo de cuántos clientes estén pidiendo modificaciones en el momento, ¡agradezco mucho tu comprensión! 🙏</p>
+                    <p>Los sitios mostrados son para la venta; la info real se coloca tras la compra 📝. <strong>Nota de paciencia:</strong> Puedo tardarme un poco en hacer cambios dependiendo de cuántos clientes estén pidiendo modificaciones en el momento, ¡agradezco mucho tu comprensión! 🙏</p>
                 </div>
             </div>
 
             <div class="policy-banner-note">
-                💡 <strong>Promoción y agradecimiento:</strong> Al usar mi dominio no pagas nada extra por mantenimiento de enlace. Además, la dirección de tu sitio aparecerá en mi página como agradecimiento y promoción sin costo adicional.
+                💡 <strong>Promoción y agradecimiento:</strong> Al usar mi dominio no pagas nada extra por mantenimiento de enlace.
             </div>
         </div>
 
         <div class="category-section">
-            <h2 class="category-title"><i class="fa-solid fa-server"></i> Ejemplos de sitios web estándar</h2>
+            <h2 class="category-title"><i class="fa-solid fa-server"></i> Mi sitio web</h2>
 
             <div class="project-card">
                 <div class="project-title">Sitio web de Boxer y Calcetines</div>
@@ -497,7 +576,7 @@
                     </div>
 
                     <div>
-                        <div class="template-price">PRECIO: $9,500 MXN</div>
+                        <div class="template-price">PRECIO: $8,500 MXN</div>
 
                         <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
@@ -512,48 +591,6 @@
             </div>
         </div>
 
-        <!-- ======================================================== -->
-        <!-- BLOQUE 1: PÁGINAS VENDIDAS (CLIENTES)                      -->
-        <!-- ======================================================== --
-        <div class="category-section">
-            <h2 class="category-title"><i class="fa-solid fa-handshake"></i> Páginas Vendidas (Clientes)</h2>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Listado de sitios web entregados a clientes.</p>
-            
-            <div class="urls-list-container">
-                <!-- 
-                
-               =============================================================== COPIO Y PEGO ESTE BLOQUE COMPLETO PARA AGREGAR MÁS CLIENTES ===============================================================
-                
-                --
-                <div class="url-row-item">
-                    <span class="url-item-name"><i class="fa-solid fa-store" style="color: var(--primary); margin-right: 8px;"></i> Nombre del Negocio o Cliente</span>
-                    <a href="https://enlace-del-cliente.com" target="_blank" class="project-link">https://enlace-del-cliente.com</a>
-                </div>
-                <!-- FIN DEL BLOQUE A COPIAR -->
-                
-            </div>
-        </div>
-
-        <!-- ======================================================== -->
-        <!-- BLOQUE 2: MIS SITIOS WEB (PROPIOS / NO A LA VENTA)         -->
-        <!-- ======================================================== --
-        <div class="category-section">
-            <h2 class="category-title"><i class="fa-solid fa-laptop-code"></i> Mis Sitios Web (De mi Propiedad)</h2>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Proyectos personales y herramientas propias.</p>
-            
-            <div class="urls-list-container">
-                <!-- 
-                
-                =============================================================== COPIO Y PEGO ESTE BLOQUE COMPLETO PARA AGREGAR MÁS SITIOS PROPIOS ============================================================================
-                --
-                <div class="url-row-item">
-                    <span class="url-item-name"><i class="fa-solid fa-code" style="color: var(--accent); margin-right: 8px;"></i> Nombre de mi Sitio Personal</span>
-                    <a href="https://mi-sitio-personal.com" target="_blank" class="project-link">https://mi-sitio-personal.com</a>
-                </div>
-                <!-- FIN DEL BLOQUE A COPIAR -->
-            </div>
-        </div>
-
     </section>
 
     <div id="imageModal" class="image-modal" onclick="closeModal()">
@@ -561,7 +598,23 @@
         <img class="modal-content" id="modalImage">
     </div>
 
+    <!-- AQUÍ DEBO DE COPIAR EL BLOQUE DE CÓDIGO PARA AGREGAR O MODIFICAR LA LÓGICA DE LOS TEMAS -->
     <script>
+        function cambiarTema(tema) {
+            document.body.setAttribute('data-theme', tema);
+            localStorage.setItem('krhorkos_theme', tema);
+        }
+
+        // Cargar el tema guardado previamente si existe
+        window.addEventListener('DOMContentLoaded', () => {
+            const temaGuardado = localStorage.getItem('krhorkos_theme');
+            if (temaGuardado) {
+                document.body.setAttribute('data-theme', temaGuardado);
+                const select = document.getElementById('themeSelect');
+                if (select) select.value = temaGuardado;
+            }
+        });
+
         function openModal(element) {
             const modal = document.getElementById("imageModal");
             const modalImg = document.getElementById("modalImage");
@@ -574,6 +627,7 @@
             modal.style.display = "none";
         }
     </script>
+    <!-- FIN DEL BLOQUE A COPIAR -->
 
 </body>
 </html>

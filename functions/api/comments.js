@@ -4,10 +4,7 @@ export default {
 
     if (request.method === "POST" && url.pathname === "/api/comments") {
       const { name, message } = await request.json();
-      
-      if (!name || !message) {
-        return new Response("Faltan datos", { status: 400 });
-      }
+      if (!name || !message) return new Response("Faltan datos", { status: 400 });
       
       await env.COMMENTS_DB.prepare(
         "INSERT INTO comments (name, message, approved) VALUES (?, ?, 1)"
@@ -28,6 +25,6 @@ export default {
       });
     }
 
-    return new Response("Ruta no encontrada", { status: 404 });
+    return new Response("No encontrado", { status: 404 });
   }
 };

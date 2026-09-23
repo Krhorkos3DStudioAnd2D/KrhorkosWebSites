@@ -2,7 +2,6 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // 📥 Recibir comentario
     if (request.method === "POST" && url.pathname === "/api/comments") {
       const { name, message } = await request.json();
       
@@ -11,7 +10,7 @@ export default {
       }
       
       await env.COMMENTS_DB.prepare(
-        "INSERT INTO comments (name, message, approved) VALUES (?, ?, 0)"
+        "INSERT INTO comments (name, message, approved) VALUES (?, ?, 1)"
       ).bind(name, message).run();
       
       return new Response(JSON.stringify({ success: true }), {
@@ -19,7 +18,6 @@ export default {
       });
     }
 
-    // 📤 Mostrar comentarios aprobados
     if (request.method === "GET" && url.pathname === "/api/comments") {
       const { results } = await env.COMMENTS_DB.prepare(
         "SELECT * FROM comments WHERE approved = 1 ORDER BY created_at DESC"

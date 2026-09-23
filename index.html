@@ -146,5 +146,90 @@
         </div>
     </div>
 
+
+
+    <!-- SECCIÓN DE COMENTARIOS -->
+<div style="max-width: 600px; margin: 60px auto 40px; padding: 0 20px; text-align: center;">
+  <h3 style="font-size: 1.5rem; margin-bottom: 25px; color: #7b2ffd;">💬 Déjanos tu comentario</h3>
+  
+  <form id="formComentario" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
+    <input 
+      type="text" id="nombre" placeholder="Tu nombre" required
+      style="padding: 14px; border-radius: 10px; border: 1px solid #2a2c3d; background: #1a1a1a; color: #f8f9fa; font-size: 1rem;"
+    >
+    <textarea 
+      id="mensaje" placeholder="Tu comentario..." required rows="4"
+      style="padding: 14px; border-radius: 10px; border: 1px solid #2a2c3d; background: #1a1a1a; color: #f8f9fa; font-size: 1rem; resize: none;"
+    ></textarea>
+    <button 
+      type="submit"
+      style="padding: 14px; background: linear-gradient(135deg, #7b2ffd, #9353ff); color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 1.1rem; font-weight: 700; transition: all 0.3s;"
+      onmouseover="this.style.transform='translateY(-3px)'"
+      onmouseout="this.style.transform='none'"
+    >
+      Enviar comentario ✅
+    </button>
+  </form>
+
+  <div id="listaComentarios" style="text-align: left; max-width: 500px; margin: 0 auto;"></div>
+</div>
+
+<script>
+// Cargar comentarios
+async function cargarComentarios() {
+  try {
+    const res = await fetch('/api/comments');
+    const comentarios = await res.json();
+    const lista = document.getElementById('listaComentarios');
+    lista.innerHTML = '';
+    
+    if (comentarios.length === 0) {
+      lista.innerHTML = '<p style="color: #a0a5b1; text-align: center; padding: 20px;">Sé el primero en comentar! 👆</p>';
+      return;
+    }
+    
+    comentarios.forEach(c => {
+      lista.innerHTML += `
+        <div style="border-bottom: 1px solid #2a2c3d; padding: 18px 0;">
+          <strong style="color: #7b2ffd; font-size: 1.05rem;">${c.name}</strong>
+          <p style="margin: 8px 0; color: #f8f9fa; line-height: 1.5;">${c.message}</p>
+          <small style="color: #a0a5b1;">${new Date(c.created_at).toLocaleDateString('es-MX')}</small>
+        </div>
+      `;
+    });
+  } catch (error) {
+    console.error('Error cargando comentarios:', error);
+    document.getElementById('listaComentarios').innerHTML = 
+      '<p style="color: #ff6b6b; text-align: center;">Los comentarios se están cargando...</p>';
+  }
+}
+
+// Enviar comentario
+document.getElementById('formComentario').addEventListener('submit', async e => {
+  e.preventDefault();
+  const nombre = document.getElementById('nombre').value.trim();
+  const mensaje = document.getElementById('mensaje').value.trim();
+  
+  if (!nombre || !mensaje) return;
+  
+  try {
+    await fetch('/api/comments', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: nombre, message: mensaje })
+    });
+    
+    alert('¡Comentario enviado! ✅\nSe mostrará después de aprobación.');
+    e.target.reset();
+    cargarComentarios();
+  } catch (error) {
+    alert('Error al enviar, intenta de nuevo por favor');
+  }
+});
+
+// Cargar al abrir la página
+cargarComentarios();
+</script>
+    
 </body>
 </html>

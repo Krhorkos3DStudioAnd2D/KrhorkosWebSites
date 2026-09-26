@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KrhorkosWebSites | Portafolio y Catálogo</title>
     
-    <!-- AQUÍ PONGO MI ICONO EN LA PESTAÑA DEL NAVEGADOR (FAVICON) -->
     <link rel="icon" type="ICONO KrhorkosWebSites.png" href="ICONO KrhorkosWebSites.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -92,7 +91,7 @@
             flex-wrap: wrap;
         }
 
-        .btn-regresar, .btn-catalogo {
+        .btn-regresar {
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -106,7 +105,7 @@
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        .btn-regresar:hover, .btn-catalogo:hover {
+        .btn-regresar:hover {
             border-color: var(--primary);
             opacity: 0.9;
         }
@@ -461,7 +460,6 @@
     <div class="top-nav">
         <div class="nav-buttons">
             <a href="index.html" class="btn-regresar"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
-            <a href="sitios.html" class="btn-catalogo"><i class="fa-solid fa-store"></i> Ver Catálogo y Precios</a>
         </div>
 
         <div class="theme-selector-container">
@@ -544,6 +542,34 @@
             </div>
         </div>
 
+        <!-- SECCIÓN DE EXPLICACIONES -->
+        <div class="info-policy-section">
+            <h2><i class="fa-solid fa-circle-question"></i> Formas de Pago y Dirección del Sitio</h2>
+            
+            <div class="policy-grid" style="grid-template-columns: 1fr;">
+                <div class="policy-card">
+                    <h3>📌 FORMAS DE PAGO</h3>
+                    <p>Los sitios web se pueden pagar de dos formas: completo de una sola vez, o poquito a poco en pagos hasta completar el valor total del sitio. Tú eliges la que mejor te convenga 💚</p>
+                </div>
+
+                <div class="policy-card">
+                    <h3>📌 SOBRE LA DIRECCIÓN DE TU SITIO</h3>
+                    <p>La dirección de cada sitio siempre tendrá esta base:</p>
+                    <p style="margin: 8px 0;">✅ <code>https://krhorkos3dstudioand2d.github.io/</code></p>
+                    <p>Después de eso va el nombre de tu negocio, así:</p>
+                    <p style="margin: 8px 0;">✅ <code>https://krhorkos3dstudioand2d.github.io/NombreDelNegocio/</code></p>
+                    <p style="margin-top: 10px; font-weight: 600; color: var(--text-main);">¿Por qué así?</p>
+                    <ul style="margin-top: 5px;">
+                        <li>El cliente no tiene que preocuparse por pagar ni renovar dominios propios 🚫💸</li>
+                        <li>Yo tampoco tengo que estar pendiente de fechas de pago ni renovaciones</li>
+                        <li>Así nadie se olvida de pagar y no se pierde el sitio</li>
+                        <li>Más simple, más estable, menos cosas que recordar ✅</li>
+                        <li>El nombre del negocio va justo después de <code>.github.io/</code> y listo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <div class="category-section">
             <h2 class="category-title"><i class="fa-solid fa-server"></i> Mi otro sitio web </h2>
 
@@ -575,7 +601,7 @@
                         <img src="SITIO_DEMO_PELUQUERIA/SITIO_DEMO_PELUQUERIA_2.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
                         
                         <div class="project-title">Sitio Completo para una Peluquería</div>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">Sitio moderno ideal para una peluquería o barbería (con mapa integrado en el Pacífico Sur libre de broncas)</p>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Sitio moderno ideal para una peluquería o barbería (con mapa integrado)</p>
                     </div>
 
                     <div>
@@ -586,12 +612,10 @@
                             <a href="https://krhorkos3dstudioand2d.github.io/KrhorkosDemo_1/" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/KrhorkosDemo_1/</a>
                         </div>
 
-                        <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
-                            <button class="btn-comprar-template"><i class="fa-solid fa-cart-shopping"></i> Comprar Sitio Web</button>
-                        </a>
+                        <a href="mailto:krhorkosstore@gmail.com?subject=Solicitud%20de%20compra:%20Sitio%20Completo%20para%20una%20Peluquer%C3%ADa%20-%20%248,500%20MXN&body=%C2%A1Hola!%20Quiero%20solicitar%20el%20sitio%20web:%0A%0A%F0%9F%93%8C%20NOMBRE%20DEL%20SITIO:%20Sitio%20Completo%20para%20una%20Peluqu%C3%ADa%0A%F0%9F%92%B0%20PRECIO:%20%248,500%20MXN%0A%0A%F0%9F%9%8B%20INFORMACI%C3%93N%20DEL%20NEGOCIO:%0ANOMBRE%20DEL%20NEGOCIO:%0ADIRECCI%C3%93N%20DEL%20ESTABLECIMIENTO%20O%20ESTABLECIMIENTOS%20(si%20son%20varios):%0AIM%C3%81GENES%20PARA%20USAR%20EN%20EL%20SITIO:%0AHORARIOS%20(D%C3%ADa,%20hora%20de%20apertura%20y%20cierre,%20d%C3%ADas%20de%20descanso):%0ACONTACTO%20(Gmail,%20WhatsApp,%20etc):%0AREDES%20SOCIALES%20(opcional%20pero%20recomendado):%0AIMAGEN%20DE%20COMPROBANTE%20DE%20PAGO%20DEL%20SITIO:%0ALOGOTIPO%20DEL%20NEGOCIO%20(para%20la%20pesta%C3%B1a%20del%20navegador):%0A%0A%F0%9F%9D%8D%20Si%20es%20tienda%20o%20venta%20de%20productos,%20agregar%20tambi%C3%A9n:%0A-%20Nombre%20de%20cada%20producto%20y%20su%20precio:" class="btn-comprar-template" style="display: inline-block;"><i class="fa-solid fa-cart-shopping"></i> Comprar este sitio</a>
                     </div>
+                </div>
 
-<!-- ==================================================================================================== AQUI COPIO ESTE BLOQUE DE CODIGO PARA AGREGAR MAS TARJETAS AL SITIO WEB ====================================================================================================-->
                 <div class="template-card">
                     <div>
                         <img src="SITIOS_DE_ABARROTES/1/ABARROTES_1.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
@@ -608,15 +632,13 @@
 
                         <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
-                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_2/index.html? target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_2/index.html</a>
+                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_2/index.html" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_2/index.html</a>
                         </div>
 
-                        <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
-                            <button class="btn-comprar-template"><i class="fa-solid fa-cart-shopping"></i> Comprar Sitio Web</button>
-                        </a>
+                        <a href="mailto:krhorkosstore@gmail.com?subject=Solicitud%20de%20compra:%20Sitio%20Completo%20para%20una%20tienda%20de%20abarrotes%20-%20%249,550%20MXN&body=%C2%A1Hola!%20Quiero%20solicitar%20el%20sitio%20web:%0A%0A%F0%9F%93%8C%20NOMBRE%20DEL%20SITIO:%20Sitio%20Completo%20para%20una%20tienda%20de%20abarrotes%0A%F0%9F%92%B0%20PRECIO:%20%249,550%20MXN%0A%0A%F0%9F%9%8B%20INFORMACI%C3%93N%20DEL%20NEGOCIO:%0ANOMBRE%20DEL%20NEGOCIO:%0ADIRECCI%C3%93N%20DEL%20ESTABLECIMIENTO%20O%20ESTABLECIMIENTOS%20(si%20son%20varios):%0AIM%C3%81GENES%20PARA%20USAR%20EN%20EL%20SITIO:%0AHORARIOS%20(D%C3%ADa,%20hora%20de%20apertura%20y%20cierre,%20d%C3%ADas%20de%20descanso):%0ACONTACTO%20(Gmail,%20WhatsApp,%20etc):%0AREDES%20SOCIALES%20(opcional%20pero%20recomendado):%0AIMAGEN%20DE%20COMPROBANTE%20DE%20PAGO%20DEL%20SITIO:%0ALOGOTIPO%20DEL%20NEGOCIO%20(para%20la%20pesta%C3%B1a%20del%20navegador):%0A%0A%F0%9F%9D%8D%20Si%20es%20tienda%20o%20venta%20de%20productos,%20agregar%20tambi%C3%A9n:%0A-%20Nombre%20de%20cada%20producto%20y%20su%20precio:" class="btn-comprar-template" style="display: inline-block;"><i class="fa-solid fa-cart-shopping"></i> Comprar este sitio</a>
                     </div>
                 </div>
-<!-- ==================================================================================================== FINAL DEL BLOQUE DE CODIGO ==================================================================================================== -->
+
                 <div class="template-card">
                     <div>
                         <img src="SITIOS_DE_CALZADOS_Y_ROPA/CALZADOS/CALZADO_1.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
@@ -634,15 +656,13 @@
 
                         <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
-                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_3/index.html? target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_3/index.html</a>
+                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_3/index.html" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_3/index.html</a>
                         </div>
 
-                        <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
-                            <button class="btn-comprar-template"><i class="fa-solid fa-cart-shopping"></i> Comprar Sitio Web</button>
-                        </a>
+                        <a href="mailto:krhorkosstore@gmail.com?subject=Solicitud%20de%20compra:%20Sitio%20Completo%20para%20una%20tienda%20de%20calzados%20-%20%246,500%20MXN&body=%C2%A1Hola!%20Quiero%20solicitar%20el%20sitio%20web:%0A%0A%F0%9F%93%8C%20NOMBRE%20DEL%20SITIO:%20Sitio%20Completo%20para%20una%20tienda%20de%20calzados%0A%F0%9F%92%B0%20PRECIO:%20%246,500%20MXN%0A%0A%F0%9F%9%8B%20INFORMACI%C3%93N%20DEL%20NEGOCIO:%0ANOMBRE%20DEL%20NEGOCIO:%0ADIRECCI%C3%93N%20DEL%20ESTABLECIMIENTO%20O%20ESTABLECIMIENTOS%20(si%20son%20varios):%0AIM%C3%81GENES%20PARA%20USAR%20EN%20EL%20SITIO:%0AHORARIOS%20(D%C3%ADa,%20hora%20de%20apertura%20y%20cierre,%20d%C3%ADas%20de%20descanso):%0ACONTACTO%20(Gmail,%20WhatsApp,%20etc):%0AREDES%20SOCIALES%20(opcional%20pero%20recomendado):%0AIMAGEN%20DE%20COMPROBANTE%20DE%20PAGO%20DEL%20SITIO:%0ALOGOTIPO%20DEL%20NEGOCIO%20(para%20la%20pesta%C3%B1a%20del%20navegador):%0A%0A%F0%9F%9D%8D%20Si%20es%20tienda%20o%20venta%20de%20productos,%20agregar%20tambi%C3%A9n:%0A-%20Nombre%20de%20cada%20producto%20y%20su%20precio:" class="btn-comprar-template" style="display: inline-block;"><i class="fa-solid fa-cart-shopping"></i> Comprar este sitio</a>
                     </div>
+                </div>
 
-<!-- ============================================================================================ SITIO DE SALONES DE CONVIVIO ================================================================================================= -->
                 <div class="template-card">
                     <div>
                         <img src="SALONES_PARA_CONVIVIOS/1/SALON_PARA_CONVIVIOS_1.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
@@ -659,15 +679,13 @@
 
                         <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
-                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_5/? target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_5/</a>
+                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_5/" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_5/</a>
                         </div>
 
-                        <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
-                            <button class="btn-comprar-template"><i class="fa-solid fa-cart-shopping"></i> Comprar Sitio Web</button>
-                        </a>
+                        <a href="mailto:krhorkosstore@gmail.com?subject=Solicitud%20de%20compra:%20Sitio%20Completo%20para%20la%20renta%20de%20salones%20-%20%2411,300%20MXN&body=%C2%A1Hola!%20Quiero%20solicitar%20el%20sitio%20web:%0A%0A%F0%9F%93%8C%20NOMBRE%20DEL%20SITIO:%20Sitio%20Completo%20para%20la%20renta%20de%20salones%0A%F0%9F%92%B0%20PRECIO:%20%2411,300%20MXN%0A%0A%F0%9F%9%8B%20INFORMACI%C3%93N%20DEL%20NEGOCIO:%0ANOMBRE%20DEL%20NEGOCIO:%0ADIRECCI%C3%93N%20DEL%20ESTABLECIMIENTO%20O%20ESTABLECIMIENTOS%20(si%20son%20varios):%0AIM%C3%81GENES%20PARA%20USAR%20EN%20EL%20SITIO:%0AHORARIOS%20(D%C3%ADa,%20hora%20de%20apertura%20y%20cierre,%20d%C3%ADas%20de%20descanso):%0ACONTACTO%20(Gmail,%20WhatsApp,%20etc):%0AREDES%20SOCIALES%20(opcional%20pero%20recomendado):%0AIMAGEN%20DE%20COMPROBANTE%20DE%20PAGO%20DEL%20SITIO:%0ALOGOTIPO%20DEL%20NEGOCIO%20(para%20la%20pesta%C3%B1a%20del%20navegador):%0A%0A%F0%9F%9D%8D%20Si%20es%20tienda%20o%20venta%20de%20productos,%20agregar%20tambi%C3%A9n:%0A-%20Nombre%20de%20cada%20producto%20y%20su%20precio:" class="btn-comprar-template" style="display: inline-block;"><i class="fa-solid fa-cart-shopping"></i> Comprar este sitio</a>
                     </div>
                 </div>
-<!-- ============================================================================ SITIO DE PAPELERIA 1 ================================================================================== -->
+
                 <div class="template-card">
                     <div>
                         <img src="SITIOS_PAPELERIAS/PAPELERIA_1/PAPELERIA_1.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
@@ -685,15 +703,13 @@
 
                         <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
-                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_4/index.html? target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_4/index.html</a>
+                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_4/index.html" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_4/index.html</a>
                         </div>
 
-                        <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
-                            <button class="btn-comprar-template"><i class="fa-solid fa-cart-shopping"></i> Comprar Sitio Web</button>
-                        </a>
+                        <a href="mailto:krhorkosstore@gmail.com?subject=Solicitud%20de%20compra:%20Sitio%20Completo%20para%20una%20papeleria%20-%20%2412,150%20MXN&body=%C2%A1Hola!%20Quiero%20solicitar%20el%20sitio%20web:%0A%0A%F0%9F%93%8C%20NOMBRE%20DEL%20SITIO:%20Sitio%20Completo%20para%20una%20papeleria%0A%F0%9F%92%B0%20PRECIO:%20%2412,150%20MXN%0A%0A%F0%9F%9%8B%20INFORMACI%C3%93N%20DEL%20NEGOCIO:%0ANOMBRE%20DEL%20NEGOCIO:%0ADIRECCI%C3%93N%20DEL%20ESTABLECIMIENTO%20O%20ESTABLECIMIENTOS%20(si%20son%20varios):%0AIM%C3%81GENES%20PARA%20USAR%20EN%20EL%20SITIO:%0AHORARIOS%20(D%C3%ADa,%20hora%20de%20apertura%20y%20cierre,%20d%C3%ADas%20de%20descanso):%0ACONTACTO%20(Gmail,%20WhatsApp,%20etc):%0AREDES%20SOCIALES%20(opcional%20pero%20recomendado):%0AIMAGEN%20DE%20COMPROBANTE%20DE%20PAGO%20DEL%20SITIO:%0ALOGOTIPO%20DEL%20NEGOCIO%20(para%20la%20pesta%C3%B1a%20del%20navegador):%0A%0A%F0%9F%9D%8D%20Si%20es%20tienda%20o%20venta%20de%20productos,%20agregar%20tambi%C3%A9n:%0A-%20Nombre%20de%20cada%20producto%20y%20su%20precio:" class="btn-comprar-template" style="display: inline-block;"><i class="fa-solid fa-cart-shopping"></i> Comprar este sitio</a>
                     </div>
                 </div>
-<!-- ===================================================================================================================== SITIO DE CAFETERIA ================================================================================== -->
+
                 <div class="template-card">
                     <div>
                         <img src="CAFETERIA_1/CAFETERIA_1.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
@@ -710,15 +726,13 @@
 
                         <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
-                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_7/? target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_7/</a>
+                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_7/" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_7/</a>
                         </div>
 
-                        <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
-                            <button class="btn-comprar-template"><i class="fa-solid fa-cart-shopping"></i> Comprar Sitio Web</button>
-                        </a>
+                        <a href="mailto:krhorkosstore@gmail.com?subject=Solicitud%20de%20compra:%20Sitio%20Completo%20y%20profesional%20ideal%20para%20una%20Cafeteria%20-%20%2414,470%20MXN&body=%C2%A1Hola!%20Quiero%20solicitar%20el%20sitio%20web:%0A%0A%F0%9F%93%8C%20NOMBRE%20DEL%20SITIO:%20Sitio%20Completo%20y%20profesional%20ideal%20para%20una%20Cafeteria%0A%F0%9F%92%B0%20PRECIO:%20%2414,470%20MXN%0A%0A%F0%9F%9%8B%20INFORMACI%C3%93N%20DEL%20NEGOCIO:%0ANOMBRE%20DEL%20NEGOCIO:%0ADIRECCI%C3%93N%20DEL%20ESTABLECIMIENTO%20O%20ESTABLECIMIENTOS%20(si%20son%20varios):%0AIM%C3%81GENES%20PARA%20USAR%20EN%20EL%20SITIO:%0AHORARIOS%20(D%C3%ADa,%20hora%20de%20apertura%20y%20cierre,%20d%C3%ADas%20de%20descanso):%0ACONTACTO%20(Gmail,%20WhatsApp,%20etc):%0AREDES%20SOCIALES%20(opcional%20pero%20recomendado):%0AIMAGEN%20DE%20COMPROBANTE%20DE%20PAGO%20DEL%20SITIO:%0ALOGOTIPO%20DEL%20NEGOCIO%20(para%20la%20pesta%C3%B1a%20del%20navegador):%0A%0A%F0%9F%9D%8D%20Si%20es%20tienda%20o%20venta%20de%20productos,%20agregar%20tambi%C3%A9n:%0A-%20Nombre%20de%20cada%20producto%20y%20su%20precio:" class="btn-comprar-template" style="display: inline-block;"><i class="fa-solid fa-cart-shopping"></i> Comprar este sitio</a>
                     </div>
                 </div>
-<!-- =================================================================================================== SITIO PARA GIMNASIO ===============================================================================================================--->
+
                 <div class="template-card">
                     <div>
                         <img src="GYM_1/GYM_1.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
@@ -734,20 +748,17 @@
                     </div>
 
                     <div>
-                        <div class="template-price">PRECIO: $16,170 MXN</div>
+                        <div class="template-price">PRECIO: $15,170 MXN</div>
 
                         <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
-                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_6/index.html? target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_6/index.html</a>
+                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_6/index.html" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_6/index.html</a>
                         </div>
 
-                        <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
-                            <button class="btn-comprar-template"><i class="fa-solid fa-cart-shopping"></i> Comprar Sitio Web</button>
-                        </a>
+                        <a href="mailto:krhorkosstore@gmail.com?subject=Solicitud%20de%20compra:%20Sitio%20Completo%20y%20profesional%20ideal%20para%20un%20Gimnasio%20-%20%2416,170%20MXN&body=%C2%A1Hola!%20Quiero%20solicitar%20el%20sitio%20web:%0A%0A%F0%9F%93%8C%20NOMBRE%20DEL%20SITIO:%20Sitio%20Completo%20y%20profesional%20ideal%20para%20un%20Gimnasio%0A%F0%9F%92%B0%20PRECIO:%20%2416,170%20MXN%0A%0A%F0%9F%9%8B%20INFORMACI%C3%93N%20DEL%20NEGOCIO:%0ANOMBRE%20DEL%20NEGOCIO:%0ADIRECCI%C3%93N%20DEL%20ESTABLECIMIENTO%20O%20ESTABLECIMIENTOS%20(si%20son%20varios):%0AIM%C3%81GENES%20PARA%20USAR%20EN%20EL%20SITIO:%0AHORARIOS%20(D%C3%ADa,%20hora%20de%20apertura%20y%20cierre,%20d%C3%ADas%20de%20descanso):%0ACONTACTO%20(Gmail,%20WhatsApp,%20etc):%0AREDES%20SOCIALES%20(opcional%20pero%20recomendado):%0AIMAGEN%20DE%20COMPROBANTE%20DE%20PAGO%20DEL%20SITIO:%0ALOGOTIPO%20DEL%20NEGOCIO%20(para%20la%20pesta%C3%B1a%20del%20navegador):%0A%0A%F0%9F%9D%8D%20Si%20es%20tienda%20o%20venta%20de%20productos,%20agregar%20tambi%C3%A9n:%0A-%20Nombre%20de%20cada%20producto%20y%20su%20precio:" class="btn-comprar-template" style="display: inline-block;"><i class="fa-solid fa-cart-shopping"></i> Comprar este sitio</a>
                     </div>
                 </div>
-<!-- =================================================================================================== SITIO PARA  ===============================================================================================================--->
-                </div>
+
             </div>
         </div>
 
@@ -758,9 +769,6 @@
         <img class="modal-content" id="modalImage">
     </div>
 
-    <!-- ========================================== -->
-    <!-- BLOQUE PARA COPIAR: Lógica de Temas        -->
-    <!-- ========================================== -->
     <script>
         function cambiarTema(tema) {
             document.body.setAttribute('data-theme', tema);
@@ -788,7 +796,6 @@
             modal.style.display = "none";
         }
     </script>
-    <!-- FIN DEL BLOQUE A COPIAR -->
 
 </body>
 </html>

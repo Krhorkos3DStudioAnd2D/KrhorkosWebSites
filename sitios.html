@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KrhorkosWebSites | Portafolio y Catálogo</title>
     
+    <!-- AQUÍ PONGO MI ICONO EN LA PESTAÑA DEL NAVEGADOR (FAVICON) -->
     <link rel="icon" type="ICONO KrhorkosWebSites.png" href="ICONO KrhorkosWebSites.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -91,7 +92,7 @@
             flex-wrap: wrap;
         }
 
-        .btn-regresar {
+        .btn-regresar, .btn-catalogo {
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -105,7 +106,7 @@
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        .btn-regresar:hover {
+        .btn-regresar:hover, .btn-catalogo:hover {
             border-color: var(--primary);
             opacity: 0.9;
         }
@@ -289,25 +290,20 @@
             color: var(--text-main);
         }
 
-        /* 1️⃣ FORMATO COLLAGE PARA IMÁGENES */
         .project-images-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
             margin-bottom: 20px;
-            background: var(--bg-dark);
-            padding: 15px;
-            border-radius: 12px;
-            border: 1px dashed var(--border-color);
         }
 
         .project-img {
             width: 100%;
-            height: 140px;
-            object-fit: contain;
-            background: var(--card-inner);
+            height: 130px;
+            object-fit: cover;
             border-radius: 8px;
             border: 1px solid var(--border-color);
+            background: var(--bg-dark);
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
@@ -315,7 +311,6 @@
         .project-img:hover {
             border-color: var(--accent);
             transform: scale(1.03);
-            box-shadow: 0 4px 15px rgba(0,245,212,0.2);
         }
 
         .project-link-container {
@@ -360,33 +355,28 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
-        /* 1️⃣ COLLAGE DE VISTA PREVIA PARA PLANTILLAS */
-        .template-collage-preview {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            background: var(--bg-dark);
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px dashed var(--border-color);
-            margin-bottom: 15px;
-        }
-
         .template-preview-img {
             width: 100%;
-            height: 120px;
-            object-fit: contain;
-            background: var(--card-inner);
-            border-radius: 6px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
             border: 1px solid var(--border-color);
+            margin-bottom: 15px;
+            background: var(--bg-dark);
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .template-preview-img:hover {
             border-color: var(--primary);
-            transform: scale(1.03);
-            box-shadow: 0 4px 15px rgba(123,47,253,0.2);
+            transform: scale(1.02);
+        }
+
+        .template-price {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--accent);
+            margin: 15px 0;
         }
 
         .template-link {
@@ -420,17 +410,6 @@
         .btn-comprar-template:hover {
             opacity: 0.9;
             transform: translateY(-2px);
-        }
-
-        /* 2️⃣ DIVISORES VISUALES ENTRE SITIOS DEL CATÁLOGO */
-        .catalog-divider {
-            grid-column: 1 / -1;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(to right, transparent, var(--primary), var(--accent), var(--primary), transparent);
-            margin: 15px 0;
-            border-radius: 2px;
-            opacity: 0.7;
         }
 
         .image-modal {
@@ -482,6 +461,7 @@
     <div class="top-nav">
         <div class="nav-buttons">
             <a href="index.html" class="btn-regresar"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+            <a href="sitios.html" class="btn-catalogo"><i class="fa-solid fa-store"></i> Ver Catálogo y Precios</a>
         </div>
 
         <div class="theme-selector-container">
@@ -499,6 +479,7 @@
         <div class="header-portafolio">
             <h1>
                 <img src="ICONO KrhorkosWebSites.png" alt="Icono" class="header-logo-icon">
+                
                 Portafolio de Trabajos
             </h1>
             <p>Sitios Web</p>
@@ -510,18 +491,13 @@
             <div class="policy-grid">
                 <div class="policy-card">
                     <h3><i class="fa-solid fa-globe"></i> 1. Sobre el Dominio</h3>
-                    <p>La dirección de cada sitio siempre tendrá esta base:</p>
-                    <p style="margin-top: 6px;">✅ <code>https://krhorkos3dstudioand2d.github.io/</code></p>
-                    <p style="margin-top: 6px;">Después de eso va el nombre del negocio, así:</p>
-                    <p style="margin-top: 6px;">✅ <code>https://krhorkos3dstudioand2d.github.io/NombreDelNegocio/</code></p>
-                    <p style="margin-top: 10px; font-weight: 600; color: var(--accent);">¿Por qué así?</p>
+                    <p>Sugiero usar mi dominio por Tres razones clave:</p>
                     <ul>
-                        <li>El cliente no tiene que preocuparse por pagar ni renovar dominios propios 🚫💸</li>
-                        <li>Yo tampoco tengo que estar pendiente de fechas de pago ni renovaciones</li>
-                        <li>Así nadie se olvida de pagar y no se pierde el sitio</li>
-                        <li>Más simple, más estable, menos cosas que recordar ✅</li>
-                        <li>El nombre del negocio va justo después de <code>.github.io/</code> y listo</li>
+                        <li>Evitas gastos extra cada año 💸</li>
+                        <li>No te preocupas por pagos de renovación ⏰</li>
+                        <li>Me evito dolores de cabeza despues.</li>
                     </ul>
+                    <p style="margin-top: 8px;">Se usa mi dominio gratis. Solo cambiamos la info por la tuya. El dominio sigue siendo mío, pero el contenido es <strong>100% tuyo</strong> ✨</p>
                 </div>
 
                 <div class="policy-card">
@@ -568,16 +544,6 @@
             </div>
         </div>
 
-        <div class="info-policy-section" style="border: 2px solid var(--primary); background: var(--card-inner);">
-            <h2><i class="fa-solid fa-hand-holding-dollar" style="color: var(--primary);"></i> Forma de Pago y Flexibilidad</h2>
-            <p style="font-size: 1.15rem; line-height: 1.6; color: var(--text-main); font-weight: 600; margin-bottom: 15px;">
-                "Los sitios web se pueden pagar de dos formas: completo de una sola vez, o poquito a poco en pagos hasta completar el valor total del sitio. Tú eliges la que mejor te convenga 💚"
-            </p>
-            <p style="font-size: 0.98rem; line-height: 1.6; color: var(--text-muted);">
-                ✨ <strong>Nota adicional:</strong> Recuerda que esta facilidad de pagos poquito a poco funciona excelente de la mano con esta estructura de URL base. Todo está diseñado para ahorrar tiempo, evitar dolores de cabeza y quitar preocupaciones tanto para ti como para mí, manteniendo un proceso amable, claro, honesto y transparente en todo momento.
-            </p>
-        </div>
-
         <div class="category-section">
             <h2 class="category-title"><i class="fa-solid fa-server"></i> Mi otro sitio web </h2>
 
@@ -605,17 +571,17 @@
                 
                 <div class="template-card">
                     <div>
-                        <div class="template-collage-preview">
-                            <img src="SITIO_DEMO_PELUQUERIA/SITIO_DEMO_PELUQUERIA_1.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="SITIO_DEMO_PELUQUERIA/SITIO_DEMO_PELUQUERIA_2.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                        </div>
+                        <img src="SITIO_DEMO_PELUQUERIA/SITIO_DEMO_PELUQUERIA_1.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SITIO_DEMO_PELUQUERIA/SITIO_DEMO_PELUQUERIA_2.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
                         
                         <div class="project-title">Sitio Completo para una Peluquería</div>
                         <p style="color: var(--text-muted); font-size: 0.95rem;">Sitio moderno ideal para una peluquería o barbería (con mapa integrado en el Pacífico Sur libre de broncas)</p>
                     </div>
 
                     <div>
-                        <div style="font-size: 0.9rem; margin-bottom: 15px; margin-top: 15px;">
+                        <div class="template-price">PRECIO: $8,500 MXN</div>
+
+                        <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
                             <a href="https://krhorkos3dstudioand2d.github.io/KrhorkosDemo_1/" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/KrhorkosDemo_1/</a>
                         </div>
@@ -624,27 +590,25 @@
                             <button class="btn-comprar-template"><i class="fa-solid fa-cart-shopping"></i> Comprar Sitio Web</button>
                         </a>
                     </div>
-                </div>
 
-                <div class="catalog-divider"></div>
-
+<!-- ==================================================================================================== AQUI COPIO ESTE BLOQUE DE CODIGO PARA AGREGAR MAS TARJETAS AL SITIO WEB ====================================================================================================-->
                 <div class="template-card">
                     <div>
-                        <div class="template-collage-preview">
-                            <img src="SITIOS_DE_ABARROTES/1/ABARROTES_1.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="SITIOS_DE_ABARROTES/1/ABARROTES_2.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="SITIOS_DE_ABARROTES/1/ABARROTES_3.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="SITIOS_DE_ABARROTES/1/ABARROTES_4.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                        </div>
+                        <img src="SITIOS_DE_ABARROTES/1/ABARROTES_1.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SITIOS_DE_ABARROTES/1/ABARROTES_2.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SITIOS_DE_ABARROTES/1/ABARROTES_3.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SITIOS_DE_ABARROTES/1/ABARROTES_4.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
                         
                         <div class="project-title">Sitio Completo para una tienda de abarrotes</div>
                         <p style="color: var(--text-muted); font-size: 0.95rem;">Sitio moderno ideal para una tienda de abarrotes (con mapa integrado en el Pacífico Sur libre de broncas)</p>
                     </div>
 
                     <div>
-                        <div style="font-size: 0.9rem; margin-bottom: 15px; margin-top: 15px;">
+                        <div class="template-price">PRECIO: $9,550 MXN</div>
+
+                        <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
-                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_2/index.html" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_2/index.html</a>
+                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_2/index.html? target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_2/index.html</a>
                         </div>
 
                         <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
@@ -652,53 +616,50 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="catalog-divider"></div>
-
+<!-- ==================================================================================================== FINAL DEL BLOQUE DE CODIGO ==================================================================================================== -->
                 <div class="template-card">
                     <div>
-                        <div class="template-collage-preview">
-                            <img src="SITIOS_DE_CALZADOS_Y_ROPA/CALZADOS/CALZADO_1.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="SITIOS_DE_CALZADOS_Y_ROPA/CALZADOS/CALZADO_2.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="SITIOS_DE_CALZADOS_Y_ROPA/CALZADOS/CALZADO_3.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="SITIOS_DE_CALZADOS_Y_ROPA/CALZADOS/CALZADO_4.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                        </div>
+                        <img src="SITIOS_DE_CALZADOS_Y_ROPA/CALZADOS/CALZADO_1.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SITIOS_DE_CALZADOS_Y_ROPA/CALZADOS/CALZADO_2.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SITIOS_DE_CALZADOS_Y_ROPA/CALZADOS/CALZADO_3.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SITIOS_DE_CALZADOS_Y_ROPA/CALZADOS/CALZADO_4.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SITIOS_DE_CALZADOS_Y_ROPA/CALZADOS/CALZADO_5.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
                         
                         <div class="project-title">Sitio Completo para una tienda de calzados</div>
                         <p style="color: var(--text-muted); font-size: 0.95rem;">Sitio moderno ideal para una tienda de calzado (con mapa integrado)</p>
                     </div>
 
                     <div>
-                        <div style="font-size: 0.9rem; margin-bottom: 15px; margin-top: 15px;">
+                        <div class="template-price">PRECIO: $6,500 MXN</div>
+
+                        <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
-                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_3/index.html" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_3/index.html</a>
+                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_3/index.html? target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_3/index.html</a>
                         </div>
 
                         <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
                             <button class="btn-comprar-template"><i class="fa-solid fa-cart-shopping"></i> Comprar Sitio Web</button>
                         </a>
                     </div>
-                </div>
 
-                <div class="catalog-divider"></div>
-
+<!-- ============================================================================================ SITIO DE SALONES DE CONVIVIO ================================================================================================= -->
                 <div class="template-card">
                     <div>
-                        <div class="template-collage-preview">
-                            <img src="SALONES_PARA_CONVIVIOS/1/SALON_PARA_CONVIVIOS_1.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="SALONES_PARA_CONVIVIOS/1/SALON_PARA_CONVIVIOS_2.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="SALONES_PARA_CONVIVIOS/1/SALON_PARA_CONVIVIOS_3.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="SALONES_PARA_CONVIVIOS/1/SALON_PARA_CONVIVIOS_4.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                        </div>
+                        <img src="SALONES_PARA_CONVIVIOS/1/SALON_PARA_CONVIVIOS_1.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SALONES_PARA_CONVIVIOS/1/SALON_PARA_CONVIVIOS_2.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SALONES_PARA_CONVIVIOS/1/SALON_PARA_CONVIVIOS_3.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SALONES_PARA_CONVIVIOS/1/SALON_PARA_CONVIVIOS_4.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
                         
                         <div class="project-title">Sitio Completo para la renta de salones</div>
                         <p style="color: var(--text-muted); font-size: 0.95rem;">Sitio moderno ideal para la renta de salones (con mapa integrado)</p>
                     </div>
 
                     <div>
-                        <div style="font-size: 0.9rem; margin-bottom: 15px; margin-top: 15px;">
+                        <div class="template-price">PRECIO: $11,300 MXN</div>
+
+                        <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
-                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_5/" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_5/</a>
+                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_5/? target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_5/</a>
                         </div>
 
                         <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
@@ -706,26 +667,25 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="catalog-divider"></div>
-
+<!-- ============================================================================ SITIO DE PAPELERIA 1 ================================================================================== -->
                 <div class="template-card">
                     <div>
-                        <div class="template-collage-preview">
-                            <img src="SITIOS_PAPELERIAS/PAPELERIA_1/PAPELERIA_1.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="SITIOS_PAPELERIAS/PAPELERIA_1/PAPELERIA_2.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="SITIOS_PAPELERIAS/PAPELERIA_1/PAPELERIA_3.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="SITIOS_PAPELERIAS/PAPELERIA_1/PAPELERIA_4.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                        </div>
+                        <img src="SITIOS_PAPELERIAS/PAPELERIA_1/PAPELERIA_1.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SITIOS_PAPELERIAS/PAPELERIA_1/PAPELERIA_2.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SITIOS_PAPELERIAS/PAPELERIA_1/PAPELERIA_3.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SITIOS_PAPELERIAS/PAPELERIA_1/PAPELERIA_4.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="SITIOS_PAPELERIAS/PAPELERIA_1/PAPELERIA_5.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
                         
                         <div class="project-title">Sitio Completo para una papeleria</div>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">Sitio moderno ideal para una papeleria (con mapa integrado)</p>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Sitio moderno ideal para una papeleria(con mapa integrado)</p>
                     </div>
 
                     <div>
-                        <div style="font-size: 0.9rem; margin-bottom: 15px; margin-top: 15px;">
+                        <div class="template-price">PRECIO: $12,150 MXN</div>
+
+                        <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
-                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_4/index.html" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_4/index.html</a>
+                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_4/index.html? target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_4/index.html</a>
                         </div>
 
                         <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
@@ -733,26 +693,24 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="catalog-divider"></div>
-
+<!-- ===================================================================================================================== SITIO DE CAFETERIA ================================================================================== -->
                 <div class="template-card">
                     <div>
-                        <div class="template-collage-preview">
-                            <img src="CAFETERIA_1/CAFETERIA_1.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="CAFETERIA_1/CAFETERIA_2.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="CAFETERIA_1/CAFETERIA_3.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="CAFETERIA_1/CAFETERIA_4.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                        </div>
+                        <img src="CAFETERIA_1/CAFETERIA_1.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="CAFETERIA_1/CAFETERIA_2.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="CAFETERIA_1/CAFETERIA_3.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="CAFETERIA_1/CAFETERIA_4.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
                         
                         <div class="project-title">Sitio Completo y profesional ideal para una Cafeteria</div>
                         <p style="color: var(--text-muted); font-size: 0.95rem;">Sitio moderno ideal para una cafeteria (con mapa integrado)</p>
                     </div>
 
                     <div>
-                        <div style="font-size: 0.9rem; margin-bottom: 15px; margin-top: 15px;">
+                        <div class="template-price">PRECIO: $14,470 MXN</div>
+
+                        <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
-                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_7/" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_7/</a>
+                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_7/? target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_7/</a>
                         </div>
 
                         <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
@@ -760,27 +718,27 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="catalog-divider"></div>
-
+<!-- =================================================================================================== SITIO PARA GIMNASIO ===============================================================================================================--->
                 <div class="template-card">
                     <div>
-                        <!-- 1️⃣ FORMATO COLLAGE -->
-                        <div class="template-collage-preview">
-                            <img src="GYM_1/GYM_1.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="GYM_1/GYM_2.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="GYM_1/GYM_3.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                            <img src="GYM_1/GYM_4.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
-                        </div>
+                        <img src="GYM_1/GYM_1.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="GYM_1/GYM_2.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="GYM_1/GYM_3.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="GYM_1/GYM_4.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="GYM_1/GYM_5.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="GYM_1/GYM_6.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
+                        <img src="GYM_1/GYM_7.png" alt="Vista previa de la plantilla" class="template-preview-img" onclick="openModal(this)">
                         
                         <div class="project-title">Sitio Completo y profesional ideal para un Gimnasio</div>
                         <p style="color: var(--text-muted); font-size: 0.95rem;">Sitio moderno ideal para un Gimnasio (con mapa integrado)</p>
                     </div>
 
                     <div>
-                        <div style="font-size: 0.9rem; margin-bottom: 15px; margin-top: 15px;">
+                        <div class="template-price">PRECIO: $16,170 MXN</div>
+
+                        <div style="font-size: 0.9rem; margin-bottom: 15px;">
                             <span>Ver Sitio Web:</span>
-                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_6/index.html" target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_6/index.html</a>
+                            <a href="https://krhorkos3dstudioand2d.github.io/DEMO_6/index.html? target="_blank" class="template-link">https://krhorkos3dstudioand2d.github.io/DEMO_6/index.html</a>
                         </div>
 
                         <a href="https://mail.google.com/mail/u/0/?fs=1&to=krhorkosstore@gmail.com&tf=cm" target="_blank">
@@ -788,7 +746,8 @@
                         </a>
                     </div>
                 </div>
-
+<!-- =================================================================================================== SITIO PARA  ===============================================================================================================--->
+                </div>
             </div>
         </div>
 
@@ -799,6 +758,9 @@
         <img class="modal-content" id="modalImage">
     </div>
 
+    <!-- ========================================== -->
+    <!-- BLOQUE PARA COPIAR: Lógica de Temas        -->
+    <!-- ========================================== -->
     <script>
         function cambiarTema(tema) {
             document.body.setAttribute('data-theme', tema);
@@ -826,6 +788,7 @@
             modal.style.display = "none";
         }
     </script>
+    <!-- FIN DEL BLOQUE A COPIAR -->
 
 </body>
 </html>

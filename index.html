@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KrhorkosWebSites | Bienvenida</title>
+    <link rel="icon" type="image/png" content="ICONO KrhorkosWebSites.png">
     <meta name="description" content="Sitios web de calidad a precios justos para negocios de Jalisco y Tlajomulco. Pago completo o en abonos, sin renovaciones anuales. Diseño profesional con mapa integrado y contacto.">
     <meta name="keywords" content="Sitios web, páginas web, diseño web, Jalisco, Tlajomulco, Hacienda Santa Fe, páginas para negocios, sitios web de calidad, precios accesibles, pago en abonos, sin renovaciones">
     <meta name="robots" content="index, follow">
@@ -82,7 +83,7 @@
         .social-links {
             display: flex;
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 10px;
         }
         .social-icon {
             display: flex;
@@ -103,6 +104,28 @@
             border-color: var(--primary);
             transform: translateY(-4px);
             box-shadow: 0 5px 15px rgba(123, 47, 253, 0.5);
+        }
+        .extra-info {
+            margin-top: 15px;
+            text-align: center;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        .garantia {
+            margin-top: 20px;
+            padding: 15px 25px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+        }
+        .correo-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .correo-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -110,7 +133,19 @@
         <h1 class="welcome-title">Krhorkos<span>WebSites</span></h1>
         <p class="welcome-subtitle">Tu presencia en internet, construida a tu medida</p>
         
-        <a href="sitios.html" class="btn-solicitar">🛒 Solicitar mi sitio web</a>
+        <a href="sitios.html" class="btn-solicitar">🛒 Ver Catálogo y Precios</a>
+        
+        <div class="extra-info">
+            <p>✅ Diseño profesional · Mapa interactivo · Contacto visible</p>
+            <p>📱 Se ve bien en celular y computadora</p>
+            <p>💸 Sin renovaciones anuales ni costos ocultos</p>
+            <p>💰 Pago completo o en abonos</p>
+            
+            <div class="garantia">
+                <p>🛡️ <strong>Garantía:</strong> Si algo no funciona, lo corrijo sin costo extra.</p>
+                <p>📧 Escríbeme a: <a href="mailto:krhorkosstore@gmail.com" class="correo-link">krhorkosstore@gmail.com</a></p>
+            </div>
+        </div>
         
         <div class="social-links">
             <a href="https://www.instagram.com/krhorkos3dstudioand2d/" target="_blank" class="social-icon" title="Instagram">
@@ -126,6 +161,9 @@
                 <i class="fa-brands fa-itch-io"></i>
             </a>
         </div>
+        
+        <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);">📍 Tlajomulco, Jalisco</p>
+        <p style="font-size: 0.85rem; margin-top: 5px; color: var(--text-muted);">© 2026 Krhorkos3DStudioAnd2D — Todos los derechos reservados</p>
     </div>
 </body>
 </html>

@@ -334,7 +334,6 @@
             text-decoration: underline;
         }
 
-        /* CORRECCIÓN DE TARJETAS DE PLANTILLAS PARA EVITAR COLLAGES DESORDENADOS */
         .templates-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -359,7 +358,6 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
-        /* Imagen principal limpia y estandarizada */
         .template-preview-img {
             width: 100%;
             height: 180px;
@@ -377,7 +375,6 @@
             opacity: 0.95;
         }
 
-        /* Contenedor secundario para miniaturas adicionales si se desean ver ordenadas */
         .template-mini-gallery {
             display: flex;
             gap: 8px;
@@ -542,8 +539,8 @@
                     <h3><i class="fa-solid fa-tags"></i> 3. Costos Opcionales</h3>
                     <p>Modificaciones posteriores a la entrega:</p>
                     <ul>
-                        <li>Cambios de texto o imágenes: <strong>$5 MXN</strong> por cada imagen y parrafo cambiado.</li>
-                        <li>Boton de cambios de tema: <strong>$200</strong></li>
+                        <li>Cambios de texto o imágenes: <strong>$5 MXN</strong> por cada imagen y parrafo modificado.</li>
+                        <li>Cambios de tema: <strong>$200</strong></li>
                     </ul>
                 </div>
 
@@ -552,7 +549,7 @@
                     <p>¿Quieres llevar tu sitio al siguiente nivel?</p>
                     <ul>
                         <li>Modificar la interfaz completa: <strong>$150 MXN</strong> 🎨</li>
-                        <li>Agregar botón para cambiar temas del sitio: <strong>$200 MXN</strong> 🌓</li>
+                        <li>Cambiar temas del sitio: <strong>$200 MXN</strong> 🌓</li>
                     </ul>
                 </div>
 
@@ -579,7 +576,21 @@
             <div class="policy-grid" style="grid-template-columns: 1fr;">
                 <div class="policy-card">
                     <h3>📌 FORMAS DE PAGO</h3>
-                    <p>Los sitios web se pueden pagar de dos formas: completo de una sola vez, o poquito a poco en pagos hasta completar el valor total del sitio. Tú eliges la que mejor te convenga 💚</p>
+                    <p>Los sitios web se pueden pagar de dos formas: completo de una sola vez, o en abonos hasta completar el valor total del sitio. Tú eliges la que mejor te convenga. </p>
+                </div>
+
+                <!-- SECCIÓN DESTACADA CON TODO EL TEXTO EN COLOR ROJO -->
+                <div class="policy-card" style="border: 2px solid #ff3333; background-color: rgba(255, 0, 0, 0.05);">
+                    <div style="color: #ff3333;">
+                        <h3 style="color: #ff3333; margin-bottom: 12px;">⚠️ ESTE SERVICIO NO OFRECE DOMINIO PROPIO</h3>
+                        <p style="color: #ff3333; margin-bottom: 8px;">No incluyo dominio propio por estas razones:</p>
+                        <ul style="color: #ff3333; list-style-type: disc; padding-left: 20px; line-height: 1.6;">
+                            <li>Quiero evitarme dolores de cabeza de estar al pendiente de los pagos del sitio</li>
+                            <li>Actualmente no sé cómo manejar los dominios propios</li>
+                            <li>Se me pueden olvidar las contraseñas y las fechas de renovación</li>
+                            <li>Es demasiado enredo y complicación conectar el sitio con un dominio propio</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="policy-card">
@@ -617,7 +628,7 @@
 
             <div class="templates-grid">
                 
-                <!-- ========================================================================================================== 1. Peluquería ========================================================================================================== -->
+                <!-- 1. Peluquería -->
                 <div class="template-card">
                     <div>
                         <img src="SITIO_DEMO_PELUQUERIA/SITIO_DEMO_PELUQUERIA_1.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
@@ -638,7 +649,7 @@
                     </div>
                 </div>
 
-                <!-- ========================================================================================================== 2. Abarrotes ========================================================================================================== -->
+                <!-- 2. Abarrotes -->
                 <div class="template-card">
                     <div>
                         <img src="SITIOS_DE_ABARROTES/1/ABARROTES_1.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
@@ -661,7 +672,7 @@
                     </div>
                 </div>
 
-                <!-- ========================================================================================================== 3. Calzados ========================================================================================================== -->
+                <!-- 3. Calzados -->
                 <div class="template-card">
                     <div>
                         <img src="SITIOS_DE_CALZADOS_Y_ROPA/CALZADOS/CALZADO_1.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
@@ -683,7 +694,7 @@
                     </div>
                 </div>
 
-                <!-- ========================================================================================================== 4. Salones de Convivios ========================================================================================================== -->
+                <!-- 4. Salones de Convivios -->
                 <div class="template-card">
                     <div>
                         <img src="SALONES_PARA_CONVIVIOS/1/SALON_PARA_CONVIVIOS_1.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
@@ -704,7 +715,7 @@
                     </div>
                 </div>
 
-                <!-- ========================================================================================================== 5. Papelería ========================================================================================================== -->
+                <!-- 5. Papelería -->
                 <div class="template-card">
                     <div>
                         <img src="SITIOS_PAPELERIAS/PAPELERIA_1/PAPELERIA_1.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
@@ -733,8 +744,8 @@
                             <img src="CAFETERIA_1/CAFETERIA_1.png" onclick="openModal(this)">
                             <img src="CAFETERIA_1/CAFETERIA_2.png" onclick="openModal(this)">
                         </div>
-                        <div class="project-title">Sitio para Cafetería</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Sitio profesional para cafeterías (con mapa integrado)</p>
+                        <div class="project-title">Sitio Web para Cafetería</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Sitio Web profesional para una cafetería (con mapa integrado)</p>
                     </div>
                     <div>
                         <div class="template-price">PRECIO: $14,470 MXN</div>
@@ -746,7 +757,7 @@
                     </div>
                 </div>
 
-                <!-- ========================================================================================================== 7. Gimnasio ========================================================================================================== -->
+                <!-- 7. Gimnasio -->
                 <div class="template-card">
                     <div>
                         <img src="GYM_1/GYM_1.png" alt="Vista previa" class="template-preview-img" onclick="openModal(this)">
@@ -754,11 +765,11 @@
                             <img src="GYM_1/GYM_1.png" onclick="openModal(this)">
                             <img src="GYM_1/GYM_2.png" onclick="openModal(this)">
                         </div>
-                        <div class="project-title">Sitio para Gimnasio</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Sitio profesional para gimnasios (con mapa integrado)</p>
+                        <div class="project-title">Sitio web para Gimnasio</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Sitio Web profesional para gimnasio (con mapa integrado)</p>
                     </div>
                     <div>
-                        <div class="template-price">PRECIO: $15,170 MXN</div>
+                        <div class="template-price">PRECIO: $14,120 MXN</div>
                         <div style="font-size: 0.85rem; margin-bottom: 10px;">
                             <span>Ver Sitio:</span>
                             <a href="https://krhorkos3dstudioand2d.github.io/DEMO_6/index.html" target="_blank" class="template-link">DEMO_6</a>
@@ -769,6 +780,110 @@
 
             </div>
         </div>
+
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <div class="info-policy-section">
+            <h2><i class="fa-solid fa-circle-question"></i> Preguntas Frecuentes</h2>
+            
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>¿El sitio es mío?</h3>
+                    <p>→ El contenido y la información de tu negocio es <strong>100% tuya</strong>. La dirección usa mi dominio de GitHub.</p>
+                </div>
+
+                <div class="policy-card">
+                    <h3>¿Tengo que pagar cada año?</h3>
+                    <p>→ <strong>NO.</strong> Una sola vez y no hay pagos de renovación después de la compra total del sitio. En cambio, si decides tener dominio propio, ahí sí tendrías que pagar cada año.</p>
+                </div>
+
+                <div class="policy-card">
+                    <h3>¿Puedo pedir cambios después?</h3>
+                    <p>→ Sí, los cambios pequeños tienen costo según la tarifa.</p>
+                </div>
+
+                <div class="policy-card">
+                    <h3>¿Cuánto puedo tardar en hacer los cambios?</h3>
+                    <p>→ Dependiendo de cuántas solicitudes tenga pendientes. Pero si son cambios pequeños los atiendo con prioridad. Cambios de imágenes y párrafos no tardan más de 3 horas, también depende de la cantidad de cosas que se agreguen.</p>
+                </div>
+
+                <div class="policy-card">
+                    <h3>¿Los sitios web están optimizados?</h3>
+                    <p>→ Sí, totalmente optimizados. Esto depende del tamaño de las imágenes ya que es lo que más pesa. Si veo o ves que el sitio empieza a pesar mucho o en pocas palabras ir lento, comprime o comprimo las imágenes para que cargue más rápido el sitio.</p>
+                </div>
+
+                <div class="policy-card">
+                    <h3>¿Tiene costo optimizar mi página web?</h3>
+                    <p>→ Sí, $60 MXN. Es un precio accesible. Si prefieres no pagar esa cantidad, puedes comprimir las imágenes tú mismo/a y así solo te cobro las imágenes nuevas que agregue o modifique.</p>
+
+                <div class="policy-card">
+                    <h3>¿Qué pasa si la plataforma deja de funcionar o se interrumpe el servicio?</h3>
+                    <p>Los archivos de cada sitio se guardan de forma segura y de manera periódica. Si algo llegara a ocurrir, todo se vuelve a subir y el sitio vuelve a estar disponible. Esto puede tardar entre 1 y 2 días, y en el mejor de los casos solo 1 día.</p>
+                </div>
+
+                <div class="policy-card" style="grid-column: 1 / -1;">
+                    <h3>¿Cómo nos estaremos comunicando?</h3>
+                    <p>→ Por correo electrónico, es la única forma que tengo hasta el momento.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ¿QUÉ INCLUYE CADA SITIO? -->
+        <div class="info-policy-section">
+            <h2><i class="fa-solid fa-list-check"></i> ¿Qué Incluye Cada Sitio?</h2>
+            
+            <div class="policy-card" style="background: var(--card-inner);">
+                <ul style="list-style: none; padding-left: 0; line-height: 2.2; font-size: 1rem; color: var(--text-main);">
+                    <li>✅ Página principal con presentación del negocio (Opcional)</li>
+                    <li>✅ Sección de productos y servicios con precios</li>
+                    <li>✅ Horarios de apertura y cierre</li>
+                    <li>✅ Dirección completa con mapa interactivo integrado 📍</li>
+                    <li>✅ Correo de contacto visible</li>
+                    <li>✅ Diseño adaptable para celular y computadora 📱💻</li>
+                    <li>✅ Sin renovaciones anuales ni costos ocultos 💸</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- GARANTÍA -->
+        <div class="info-policy-section">
+            <h2><i class="fa-solid fa-shield-halved"></i> Garantía</h2>
+            
+            <div class="policy-card">
+                <p style="font-size: 1rem; line-height: 1.6; color: var(--text-muted);">
+                    El sitio se entrega completamente funcional y con toda la información de tu negocio. Si algo no funciona como debe, te lo corrijo sin costo extra. Solo me avisas y lo arreglo.
+                </p>
+            </div>
+        </div>
+
+        <!-- CONTACTO Y REDES SOCIALES -->
+        <div class="info-policy-section">
+            <h2><i class="fa-solid fa-address-book"></i> Contacto y Redes Sociales</h2>
+            
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3><i class="fa-solid fa-envelope"></i> Contacto</h3>
+                    <p style="margin-bottom: 8px;"><strong>Correo general:</strong><br><a href="mailto:krhorkos3dstudioand2d@gmail.com" class="project-link">krhorkos3dstudioand2d@gmail.com</a></p>
+                    <p><strong>Correo para solicitar sitios:</strong><br><a href="mailto:krhorkosstore@gmail.com" class="project-link">krhorkosstore@gmail.com</a></p>
+                </div>
+
+                <div class="policy-card">
+                    <h3><i class="fa-solid fa-globe"></i> Redes Sociales</h3>
+                    <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+                        <li>📸 <strong>Instagram:</strong> <a href="https://www.instagram.com/krhorkos3dstudioand2d/" target="_blank" class="project-link">Visitar perfil</a></li>
+                        <li>🐦 <strong>X (Twitter):</strong> <a href="https://x.com/krhorkos3DAnd2D" target="_blank" class="project-link">Ver perfil</a></li>
+                        <li>▶️ <strong>YouTube:</strong> <a href="https://www.youtube.com/@Krhorkos3DStudioAnd2D-b6g" target="_blank" class="project-link">Ver canal</a></li>
+                        <li>🎮 <strong>Itch.io:</strong> <a href="https://alex293517.itch.io/" target="_blank" class="project-link">Ver juegos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-banner-note" style="text-align: center; font-weight: 600;">
+                Soy creador de juegos independiente y creador de sitios web.
+            </div>
+        </div>
+
+        <!-- ================= FIN DE SECCIONES AÑADIDAS ================= -->
 
     </section>
 
